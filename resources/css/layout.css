@@ -1,5 +1,5 @@
 .b-example-divider {
-    height: 3rem;
+    height: 1.5rem;
     background-color: rgba(0, 0, 0, .1);
     border: solid rgba(0, 0, 0, .15);
     border-width: 1px 0;
@@ -32,48 +32,106 @@
 }
 
 
-
+/* Navbar */
 .nav .nav-link{
-    color: #04ccfc;
-    /*background-color: #85e7fc;*/
+    font-size: 16px;
+    font-weight: 500;
+    color: #000 !important;
+    margin-left: 40px
 }
 
-.nav .nav-link:hover{
-    border-bottom: 1px solid #04ccfc;
-    /*background-color: #85e7fc;*/
-}
 
 
 .nav .nav-item .active{
-    background-color: #04ccfc;
+    background: none;
+    border-bottom: 2px solid #04ccfc;
+    transition-delay: 0s;
+    color: #04ccfc !important;
 }
 
 
+nav ul li a{
+    background: yellow;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .5s;
+}
+
+nav.stroke ul li a{
+    position: relative;
+}
+nav.stroke ul li a:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #04ccfc;
+    height: 2px;
+}
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+
+/* LEFT NAVBAR */
+
+.category-top-menu p.h6 {
+    font-family: "Lato",sans-serif;
+    font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    /*font-family: "Noto Sans",sans-serif;*/
+    /*font-family: -apple-system,BlinkMacSystemFont,Segoe\ UI,Roboto,Helvetica\ Neue,Arial,sans-serif;*/
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 700;
+    /*color: #222;*/
+    color: white;
+    /*margin-bottom: 15px;*/
+    position: relative;
+    display: block;
+    /*padding-bottom: 15px;*/
+    border-bottom: 1px solid #ededed;
+    text-transform: none!important;
+}
+
 /* CARD */
 .card:hover {
-    border: 1px;
+    border: 5px;
 }
 
 /* CATEGORIES FIRST PAGE */
 
-.name {
+#main-page-cards .card:hover {
+    /*box-shadow: 0 0 17px rgba(33,33,33,.2);*/
+    box-shadow: 0 0 17px rgba(4,204,252,.3);
+    color: #04ccfc;
+}
+
+
+#main-page-cards .name {
     font-size: 16px;
     color: #e83d16 !important;
     font-weight: 500
 }
 
-.navbar-toggler {
+#main-page-cards .navbar-toggler {
     font-size: 15px
 }
 
-.nav-link {
+#main-page-cards .nav-link {
     font-size: 14px;
     color: #000 !important;
     font-weight: bold;
     margin-left: 40px
 }
 
-.form-control {
+#main-page-cards .form-control {
     height: 32px;
     width: 100%;
     border-radius: 20px;
@@ -82,18 +140,18 @@
     border: none
 }
 
-.searchitem {
+#main-page-cards .searchitem {
     position: relative
 }
 
-.searchitem i {
+#main-page-cards .searchitem i {
     position: absolute;
     right: 18px;
     top:10px;
     font-size: 13px
 }
 
-.btn {
+#main-page-cards .btn {
     height: 35px;
     width: 170px;
     border: none;
@@ -103,19 +161,20 @@
     font-weight: 500
 }
 
-.text {
+#main-page-cards .text {
     font-size: 23px;
     font-weight: bold
 }
 
-.card {
+#main-page-cards .card {
+    transition: box-shadow .3s;
     height: 130px;
     overflow:hidden;
     border: none;
     border-radius: 15px
 }
 
-.imagename {
+#main-page-cards .imagename {
     font-size: 14px;
     font-weight: bold
 }
