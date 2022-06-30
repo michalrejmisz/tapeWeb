@@ -39,7 +39,7 @@
 
             <div class="d-flex justify-content-center align-items-center mt-5"> <button class="btn btn-dark">NASZE KATEGORIE</button>
             </div>
-            <div class="d-flex justify-content-center mt-3"> <span class="text text-center" style="color:white">Znajdź produkt<br>Dopasowany do Twoich potrzeb</span>
+            <div class="d-flex justify-content-center mt-3"> <span class="text text-center" style="color:black">Znajdź produkt<br>Dopasowany do Twoich potrzeb</span>
             </div>
             <div class="row mt-2 g-4">
                 <div class="col-md-3">

@@ -6,12 +6,15 @@
             <div id="left-column" class="py-3 col-xs-12 col-sm-4 col-md-3">
                 <div class="category-top-menu">
                     <div class="pt-3 px-3 pb-1 bg-info"><p class="text-uppercase h6 pb-3 mb-2">Kategorie</p></div>
-                        <ul class="category-sub-menu">
-                            <li><a href="https://sklepcoloplast.pl/19-worek-stomijny">x</a></li>
+                        <ul class="category-sub-menu bg-white mx-1">
+                            <li><a href="x">Taśma pakowa</a></li>
+                            <li><a href="x">Taśma z nadrukiem</a></li>
+                            <li><a href="x">Taśma magazynowa</a></li>
+                            <li><a href="x">Taśma ostrzegawcza</a></li>
+                            <li><a href="x">Taśma specjalistyczna</a></li>
                         </ul>
                 </div>
 
-                <div class="p-3 bg-info">Kategorie</div>
             </div>
             <div class="py-3 col-xs-12 col-sm-8 col-md-9 ">
 
