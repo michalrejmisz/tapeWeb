@@ -7,7 +7,7 @@
                 <div class="category-top-menu">
                     <div class="pt-3 px-3 pb-1 bg-info"><p class="text-uppercase h6 pb-3 mb-2">Kategorie</p></div>
                         <ul class="category-sub-menu">
-                            <li><a href="https://sklepcoloplast.pl/19-worek-stomijny">Worek stomijny</a></li>
+                            <li><a href="https://sklepcoloplast.pl/19-worek-stomijny">x</a></li>
                         </ul>
                 </div>
 
