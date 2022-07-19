@@ -58,7 +58,7 @@
                     <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">Strona Główna</a></li>
                     <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">Produkty</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">O nas</a></li>
-                    <li class="nav-item"><a href="#main-page-contact-form" class="nav-link">Kontakt</a></li>
+                    <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">Kontakt</a></li>
                 </ul>
             </nav>
         </header>
@@ -95,10 +95,10 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Użyteczne Linki</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i><a href="#">Strona Główna</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('products_all')}}">Produkty</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{request()->routeIs('main') ? '#' : '/' }}">Strona Główna</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('products') ? '#' : '/products' }}">Produkty</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">O nas</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Kontakt</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}">Kontakt</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">
