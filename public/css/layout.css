@@ -47,6 +47,7 @@
     border-bottom: 2px solid #04ccfc;
     transition-delay: 0s;
     color: #04ccfc !important;
+    pointer-events: none;
 }
 
 
@@ -114,9 +115,16 @@ ul.category-sub-menu li a{
     text-decoration: none;
 }
 
+ul.category-sub-menu li a.active  {
+    color: #04ccfc !important;
+    pointer-events: none;
+}
+
 ul.category-sub-menu li a:hover {
     color: #04ccfc !important;
 }
+
+
 
 
 ul.category-sub-menu{
@@ -373,5 +381,233 @@ ul.category-sub-menu{
 
 .main-page{
     background-color: #85e7fc;
+}
+
+
+/*.modal {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    left: 0;*/
+/*    z-index: 1050;*/
+/*    display: none;*/
+/*    outline: 0;*/
+/*}*/
+
+/*.modal, .modal-open {*/
+/*    overflow: hidden;*/
+/*}*/
+
+.quickview .modal-dialog{
+    width: calc(100% - 30px);
+    max-width: 64rem;
+}
+
+.quickview .modal-header {
+    background: #04ccfc;
+    text-align: center;
+}
+
+.quickview .modal-title{
+    color: white;
+}
+
+.quickview .modal-footer .btn{
+    background: #04ccfc;
+    border: 1px solid #04ccfc !important;
+    color: #fff !important;
+}
+
+
+
+.quickview .btn-close{
+        float: right;
+        font-size: 0.75rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        opacity: .2;
+}
+
+.img-single-view img{
+    max-width: 100%;
+    margin: auto;
+    height: auto;
+}
+
+.quickview .h1{
+    line-height: 1;
+    font-weight: 400;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+}
+
+/*Products page*/
+
+/*image*/
+.thumbnail{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin: auto;
+
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+
+/*Contact Form*/
+
+#main-page-contact-form .box{
+
+    width: 100%;
+    display: block;
+    background: #31de79;
+    color: rgba(255,255,255,.8);
+    background: #9ff669;
+    background: -webkit-gradient(left top,right bottom,color-stop(0%,#9ff669),color-stop(100%,#31de79));
+    background: linear-gradient(135deg,#9ff669 0%,#31de79 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ff669', endColorstr='#31de79', GradientType=1 );
+    border-radius: 4px;
+    box-shadow: 0 42px 29px -31px rgb(0 0 0 / 5%);
+    background: #04ccfc;
+}
+
+#main-page-contact-form .box .icon span {
+    color: #fff;
+    font-size: 30px;
+}
+
+#main-page-contact-form .heading-section{
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    /*color: rgba(0, 0, 0, 0.3);*/
+    letter-spacing: 2px;
+    /*background: #9ff669;*/
+    /*background: -moz-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -webkit-gradient(left top, right bottom, color-stop(0%, #9ff669), color-stop(100%, #31de79));*/
+    /*background: -webkit-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -o-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -ms-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -webkit-linear-gradient(315deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -o-linear-gradient(315deg, #9ff669 0%, #31de79 100%);*/
+    /*background: linear-gradient(135deg, #9ff669 0%, #31de79 100%);*/
+    color: white;
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ff669', endColorstr='#31de79', GradientType=1 );*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+}
+
+#main-page-contact-form .heading-section .subheading {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    /*color: rgba(0, 0, 0, 0.3);*/
+    /*letter-spacing: 2px;*/
+    /*background: #9ff669;*/
+    /*background: -moz-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -webkit-gradient(left top, right bottom, color-stop(0%, #9ff669), color-stop(100%, #31de79));*/
+    /*background: -webkit-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -o-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -ms-linear-gradient(-45deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -webkit-linear-gradient(315deg, #9ff669 0%, #31de79 100%);*/
+    /*background: -o-linear-gradient(315deg, #9ff669 0%, #31de79 100%);*/
+    /*background: linear-gradient(135deg, #9ff669 0%, #31de79 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ff669', endColorstr='#31de79', GradientType=1 );*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
+    color: #04ccfc;
+}
+
+#main-page-contact-form .heading-section .h2 {
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+}
+
+/*#main-page-contact-form .heading-section h2 {*/
+/*    font-size: 40px;*/
+/*    font-weight: 600;*/
+/*    text-transform: uppercase;*/
+/*    color: white;*/
+/*}*/
+
+#main-page-contact-form .align-self-stretch {
+    -ms-grid-row-align: stretch !important;
+    align-self: stretch !important;
+}
+
+#main-page-contact-form .contact-info p a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+#main-page-contact-form .contact-info p {
+    font-size: 17px;
+    color: white;
+}
+
+
+#main-page-contact-form .box .icon {
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+    margin-bottom: 2em;
+    border-radius: 50%;
+}
+
+#main-page-contact-form .box h3 {
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#main-page-contact-form  .box .icon span {
+    color: #fff;
+    font-size: 30px;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon'!important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#main-page-contact-form .contact-form .btn-primary {
+    background: #04ccfc;
+    border: 1px solid #04ccfc !important;
+    color: #fff !important;
+}
+
+main-page-contact-form .contact-form{
+    width: 100%;
+    display: block;
+    margin-top: 0em;
+}
+
+
+ /*Contact Page Modal */
+#ajax-contact-form #submit{
+    background: #04ccfc;
+    border: 1px solid #04ccfc !important;
+    color: #fff !important;
 }
 
