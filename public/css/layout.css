@@ -33,7 +33,7 @@
 
 
 /* Navbar */
-.nav .nav-link{
+#navbar .nav .nav-link{
     font-size: 16px;
     font-weight: 500;
     color: #000 !important;
@@ -42,7 +42,7 @@
 
 
 
-.nav .nav-item .active{
+#navbar .nav .nav-item .active{
     background: none;
     border-bottom: 2px solid #04ccfc;
     transition-delay: 0s;
@@ -51,20 +51,20 @@
 }
 
 
-nav ul li a{
-    background: yellow;
-}
+/*#navbar nav ul li a{*/
+/*    background: yellow;*/
+/*}*/
 
-nav ul li a,
-nav ul li a:after,
-nav ul li a:before {
+#navbar nav ul li a,
+#navbar nav ul li a:after,
+#navbar nav ul li a:before {
     transition: all .5s;
 }
 
-nav.stroke ul li a{
+#navbar nav.stroke ul li a{
     position: relative;
 }
-nav.stroke ul li a:after{
+#navbar nav.stroke ul li a:after{
     position: absolute;
     bottom: 0;
     left: 0;
@@ -76,7 +76,7 @@ nav.stroke ul li a:after{
     background: #04ccfc;
     height: 2px;
 }
-nav.stroke ul li a:hover:after {
+#navbar nav.stroke ul li a:hover:after {
     width: 100%;
 }
 
@@ -609,5 +609,95 @@ main-page-contact-form .contact-form{
     background: #04ccfc;
     border: 1px solid #04ccfc !important;
     color: #fff !important;
+}
+
+/* About us */
+
+#main-page-about-us .nav-pills .nav-link.active,#main-page-about-us .nav-pills .nav-link:hover {
+    color: #fff;
+    font-size: 20px;
+    transition: all .3s ease;
+    background: transparent;
+    font-weight: 700;
+}
+
+#main-page-about-us .nav-pills .nav-link {
+    float: left;
+    border-radius: 0;
+    margin-bottom: 0;
+    color: rgba(255,255,255,.8);
+    font-size: 20px;
+    font-weight: 400;
+    position: relative;
+}
+
+#main-page-about-us .nav-pills .nav-link.active, #main-page-about-us .nav-pills .show>.nav-link {
+    color: #fff;
+    /*background-color: #007bff;*/
+}
+
+#main-page-about-us .nav-pills .nav-link {
+    border-radius: 0.25rem;
+}
+
+#main-page-about-us .nav-pills .nav-link:after {
+    position: absolute;
+    top: 20px;
+    bottom: 10px;
+    right: 0;
+    width: 0;
+    height: 0;
+    content: '';
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #fafafa transparent transparent;
+    opacity: 0;
+}
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+#main-page-about-us p{
+    display: block;
+    -webkit-margin-before: 1em;
+            margin-block-start: 1em;
+    -webkit-margin-after: 1em;
+            margin-block-end: 1em;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+
+}
+
+#main-page-about-us{
+    font-family: "Nunito Sans",Arial,sans-serif;
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #999;
+}
+
+#main-page-about-us h2{
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 400;
+    color:black;
+    font-size: 2rem;
+}
+
+#main-page-about-us .btn {
+    background: #04ccfc;
+    border: 1px solid #04ccfc !important;
+    color: #fff !important;
+}
+
+
+.filter-green{
+    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
 }
 

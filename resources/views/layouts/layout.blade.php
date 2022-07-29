@@ -47,21 +47,23 @@
 </head>
 <body>
 <main class="sticky-top shadow" style="background-color:#f8fafc">
-    <div class="container" >
-        <header class="d-flex flex-wrap justify-content-center py-3">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                <img src="{{asset('images/logo-dark.png')}}" width="200" height="50" alt="" />
-{{--                <span class="fs-3">Simple header</span>--}}
-            </a>
-            <nav class="stroke">
-                <ul class="nav nav-pills fs-5">
-                    <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">Strona Główna</a></li>
-                    <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">Produkty</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">O nas</a></li>
-                    <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">Kontakt</a></li>
-                </ul>
-            </nav>
-        </header>
+    <div id="navbar">
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <img src="{{asset('images/logo-dark.png')}}" width="200" height="50" alt="" />
+    {{--                <span class="fs-3">Simple header</span>--}}
+                </a>
+                <nav class="stroke">
+                    <ul class="nav nav-pills fs-5">
+                        <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">Strona Główna</a></li>
+                        <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">Produkty</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">O nas</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
     </div>
 </main>
 

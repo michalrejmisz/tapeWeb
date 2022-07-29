@@ -77,7 +77,7 @@
             </div>
         </nav>
     </div>
-    <div id="layoutSidenav_content">
+    <div class="mt-5" id="layoutSidenav_content">
         <main>
             @yield('content')
 
