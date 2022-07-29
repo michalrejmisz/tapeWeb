@@ -124,7 +124,7 @@
                                 </div>
                                 <h2 class="mb-4">O nas</h2>
                                 <p>
-                                    Od 2016 roku jesteśmy firmą specjalizującą się w taśmach pakowych oraz w taśmach z nadrukiem. W naszej ofercie każdy znajdzie coś dla siebie, a jeżeli nie – pomożemy w wyborze  Nie boimy się żadnych wyzwań, zawsze spróbujemy pomóc tak, aby sprostać Państwa oczekiwaniom. Każdy klient jest traktowany przez nas indywidualnie i zawsze może liczyć na naszą pomoc. Posiadamy wieloletnie doświadczenie w tej branży i do każdego zapytania podchodzimy z pełnym zaangażowaniem. Nasze produkty są wysokiej jakości czego dowodem są klienci wykorzystujący je w różnych kategoriach przemysłu.
+                                    Od 2016 roku jesteśmy firmą specjalizującą się w taśmach pakowych oraz w taśmach z nadrukiem. W naszej ofercie każdy znajdzie coś dla siebie, a jeżeli nie – pomożemy w wyborze.  Nie boimy się żadnych wyzwań, zawsze spróbujemy pomóc tak, aby sprostać Państwa oczekiwaniom. Każdy klient jest traktowany przez nas indywidualnie i zawsze może liczyć na naszą pomoc. Posiadamy wieloletnie doświadczenie w tej branży i do każdego zapytania podchodzimy z pełnym zaangażowaniem. Nasze produkty są wysokiej jakości czego dowodem są klienci wykorzystujący je w różnych kategoriach przemysłu.
                                 </p>
                             </div>
 

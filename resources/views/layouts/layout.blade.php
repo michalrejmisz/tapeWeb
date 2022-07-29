@@ -58,7 +58,7 @@
                     <ul class="nav nav-pills fs-5">
                         <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">Strona Główna</a></li>
                         <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">Produkty</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">O nas</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}" class="nav-link">O nas</a></li>
                         <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">Kontakt</a></li>
                     </ul>
                 </nav>
