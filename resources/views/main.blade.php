@@ -111,7 +111,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-9 p-4 p-md-5" style="min-height:650px;">
+                    <div class="col-md-9 p-5" style="min-height:650px;">
                         <div class="tab-content ps-md-5 my-4" id="nav-tabContent">
                             <span class="icon mb-3 d-block flaticon-ideas"></span>
                             <div class="tab-pane fade show active" id="about-us" role="tabpanel" aria-labelledby="about-us">
