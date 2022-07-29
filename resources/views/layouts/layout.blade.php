@@ -99,7 +99,7 @@
                     <ul>
                         <li><i class="bx bx-chevron-right"></i><a href="{{request()->routeIs('main') ? '#' : '/' }}">Strona Główna</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('products') ? '#' : '/products' }}">Produkty</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">O nas</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}">O nas</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}">Kontakt</a></li>
                     </ul>
                 </div>
