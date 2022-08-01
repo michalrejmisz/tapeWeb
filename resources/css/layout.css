@@ -137,6 +137,28 @@ ul.category-sub-menu{
 }
 
 /* CATEGORIES FIRST PAGE */
+#main-page-cards .heading-section .h2 {
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+#main-page-cards .heading-section .subheading {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    /* color: rgba(0, 0, 0, 0.3); */
+    /* letter-spacing: 2px; */
+    /* background: #9ff669; */
+    /* background: -webkit-linear-gradient(-45deg, #9ff669 0%, #31de79 100%); */
+    /* background: -webkit-linear-gradient(315deg, #9ff669 0%, #31de79 100%); */
+    /* background: linear-gradient(135deg, #9ff669 0%, #31de79 100%); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    color: #04ccfc;
+}
 
 #main-page-cards .card:hover {
     /*box-shadow: 0 0 17px rgba(33,33,33,.2);*/
@@ -713,6 +735,159 @@ main-page-contact-form .contact-form{
 }
 
 
-.filter-green{
-    filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+
+.vh-50 {
+    height: 50vh;
+}
+
+.min-vh-50 {
+    min-height: 50vh;
+}
+
+
+#slogan .content--centered, .collection-grid-item__content {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 100;
+}
+
+/*#slogan .btn--clear {*/
+/*    background-color: transparent;*/
+/*    color: #333;*/
+/*    border: 1px solid #333333;*/
+/*}*/
+
+/*#slogan .btn--square {*/
+/*    border-radius: 0!important;*/
+/*}*/
+
+/*#slogan .btn--large {*/
+/*    padding: 12px 20px;*/
+/*    font-size: .875em;*/
+/*}*/
+
+#slogan {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#slogan .btn {
+    width: 215px;
+    height: 60px;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    margin: 1.5rem 1.5rem 0 0;
+    padding: 1rem;
+    letter-spacing: .25rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#slogan .btn--stroke, button.btn--stroke {
+    background: transparent !important;
+    border: 0.2rem solid white;
+    color: white;
+}
+
+
+#slogan .btn:hover, #slogan .btn:focus {
+    background: #FFFFFF !important;
+    color: #04ccfc;
+}
+
+#slogan h1 {
+        /*font-family: "montserrat-medium", sans-serif;*/
+    /*font-size: 5.3rem;*/
+    /*line-height: 1.333;*/
+    /*margin-top: 0;*/
+    /*color: #FFFFFF;*/
+    font-size: 50px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+}
+
+#slogan .h2{
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+}
+
+/* Animation */
+
+
+
+.animated {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+
+
+
+
+
+
+.scrollFade {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.scrollFade--visible {
+    opacity: 1;
+    pointer-events: all;
+}
+.scrollFade--animate {
+    transition: opacity 0.4s ease-in-out;
+}
+
+
+
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
 }

@@ -12,6 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/scrollfade.js', 'public/js')
     .css('resources/css/layout.css', 'public/css')
     .css('resources/css/dashboard.css', 'public/css')
     .sass('resources/sass/app.scss', 'public/css')

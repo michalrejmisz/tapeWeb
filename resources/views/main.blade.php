@@ -2,23 +2,56 @@
 
 
 @section('content')
-{{--    <div class="d-flex" id="slogan">--}}
-{{--        <div class="min-vh-100 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
+    <div class="d-flex min-vh-100 inline-block" id="slogan"  style="background-image: url('{{asset('images/bgshutter1920_2233.jpg')}}');">
+{{--        <div class="min-vh-50 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
 {{--            <h1 class="align-middle"><span>Z nami</span> się rozwiniesz</h1>--}}
 {{--            <h1>Bo <span>jakość</span> ma znaczenie</h1>--}}
 {{--        </div>--}}
-{{--        <div class="min-vh-100 w-50" style="background-color:#04ccfc;"></div>--}}
+{{--        <div class="min-vh-50 w-50" style="background-color:#04ccfc;"></div>--}}
+{{--        <span class="d-flex justify-content-center">middle</span>--}}
+{{--        <div class="d-flex row align-items-center vh-100">--}}
+{{--            <div class="col-6 bg-danger">--}}
+{{--                LEFT/MIDDLE TEXT--}}
+{{--            </div>--}}
+
+{{--            <div class="col-6 bg-primary">--}}
+{{--                RIGHT/MIDDLE TEXT--}}
+{{--            </div>--}}
+{{--        </div>--}}
+
+
+        <div class="content--centered animated animatedFadeInUp fadeInUp">
+            <div class="text-center preventOverflowContent">
+
+                <h1 class="title--flex title animated fadeIn" style="color: white;">Z nami się rozwiniesz,</h1>
+                <h1 class="title--flex" style="color: white;">bo jakość ma znaczenie</h1>
+{{--                <p class="content--flex h4--body" style="color: white;">Coffee House authors have events all over the world—find one near you.</p>--}}
+{{--                <a class="btn btn--large btn--clear btn--square uppercase" href="/pages/events" tabindex="0">Find an event</a>--}}
+                <a href="#main-page-products" class="smoothscroll btn btn--stroke text-center"> Zobacz produkty </a>
+{{--                <div class="d-flex justify-content-center align-items-center">Zobacz produkty</div>--}}
+            </div>
+        </div>
+    </div>
+
+{{--    <div class="d-flex min-vh-100" id="slogan">--}}
+{{--                <div class="min-vh-50 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
+{{--                    <h1 class="align-middle"><span>Z nami</span> się rozwiniesz</h1>--}}
+{{--                    <h1>Bo <span>jakość</span> ma znaczenie</h1>--}}
+{{--                </div>--}}
+{{--                <div class="min-vh-50 w-50" style="background-color:#04ccfc;"></div>--}}
 {{--    </div>--}}
 
 
 
     <div id="main-page-products" class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;">
         <div class="container">
-            <div id="main-page-cards">
-                    <div class="d-flex justify-content-center align-items-center mt-5"> <button class="btn btn-dark">NASZE KATEGORIE</button>
-                    </div>
-                    <div class="d-flex justify-content-center mt-3"> <span class="text text-center" style="color:black">Znajdź produkt<br>Dopasowany do Twoich potrzeb</span>
-                    </div>
+            <div id="main-page-cards" class="scrollFade">
+
+                    <div class="d-flex justify-content-center align-items-center mt-5 heading-section"> <span class="subheading">Nasze Kategorie</span> </div>
+                    <div class="d-flex justify-content-center heading-section mt-3"> <span class="text text-center mb-4 h2">Znajdź produkt<br>Dopasowany do Twoich potrzeb</span></div>
+{{--                    <div class="d-flex justify-content-center align-items-center mt-5"> <button class="btn btn-dark">NASZE KATEGORIE</button></div>--}}
+{{--                    <div class="d-flex justify-content-center mt-3"> <span class="text text-center" style="color:black">Znajdź produkt<br>Dopasowany do Twoich potrzeb</span></div>--}}
+
                     <div class="row mt-2 g-4">
                         <div class="col-md-3">
                             <div class="card p-1">
@@ -111,8 +144,8 @@
                         </div>
                     </div>
 
-                    <div class="col-md-9 p-5" style="min-height:650px;">
-                        <div class="tab-content ps-md-5 my-4" id="nav-tabContent">
+                    <div class="col-md-9 p-5 " style="min-height:650px;">
+                        <div class="tab-content ps-md-5 my-4 animated animatedFadeInUp fadeInUp" id="nav-tabContent">
                             <span class="icon mb-3 d-block flaticon-ideas"></span>
                             <div class="tab-pane fade show active" id="about-us" role="tabpanel" aria-labelledby="about-us">
                                 <div class="p-2 ms-3" style="color:#04ccfc;">
@@ -198,7 +231,7 @@
             <div class="container">
 
                 <div class="row justify-content-center mb-5 pb-3">
-                    <div class="col-md-7 heading-section text-center ftco-animate fadeInUp ftco-animated">
+                    <div class="col-md-7 heading-section text-center">
                         <span class="subheading">KONTAKT</span>
                         <span class="mb-4 h2">Skontaktuj się z nami</span>
 {{--                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>--}}
@@ -206,7 +239,7 @@
                 </div>
 
                 <div class="row d-flex contact-info mb-5 gy-4">
-                    <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
+                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-signpost-fill"></span>
@@ -215,7 +248,7 @@
                             <p>Os. Stefana Batorego 57, Poznań 60-687</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
+                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-telephone-fill"></span>
@@ -224,7 +257,7 @@
                             <p><a href="tel://48618249541">+ 48 61 824 9541</a></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
+                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-envelope-open-fill"></span>
@@ -233,7 +266,7 @@
                             <p><a href="mailto:biuro@wtapes.pl">biuro@wtapes.pl</a></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex ftco-animate fadeInUp ftco-animated">
+                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-globe"></span>
@@ -377,4 +410,61 @@
         })
         }
 
+{{--        ScrollReveal().reveal('#main-page-cards');--}}
+{{--        function reveal() {--}}
+{{--        var reveals = document.querySelectorAll(".reveal");--}}
+
+{{--        for (var i = 0; i < reveals.length; i++) {--}}
+{{--        var windowHeight = window.innerHeight;--}}
+{{--        var elementTop = reveals[i].getBoundingClientRect().top;--}}
+{{--        var elementVisible = 150;--}}
+
+{{--        if (elementTop < windowHeight - elementVisible) {--}}
+{{--        reveals[i].classList.add("active");--}}
+{{--        } else {--}}
+{{--        reveals[i].classList.remove("active");--}}
+{{--        }--}}
+{{--        }--}}
+{{--        }--}}
+
+{{--        window.addEventListener("scroll", reveal);--}}
+
+{{--        var waypoint = new Waypoint({--}}
+{{--            element: document.getElementById('main-page-cards'),--}}
+{{--            handler: function(direction) {--}}
+{{--                console.log('Scrolled to waypoint!')--}}
+{{--            }, {--}}
+{{--            triggerOnce: true,--}}
+{{--            offset: '75%'--}}
+{{--        }})--}}
+
+{{--        var waypoint = new Waypoint({--}}
+{{--        element: document.getElementById('main-page-cards'),--}}
+{{--        handler: function(direction) {--}}
+{{--        console.log('Scrolled to waypoint!')--}}
+{{--        },--}}
+{{--        offset: '50%',--}}
+{{--        triggerOnce: true--}}
+{{--        })--}}
+
+
+{{--        $(".testUp").waypoint(function(){--}}
+{{--            $(this[0,'element']).addClass("animated");--}}
+{{--            $(this[0,'element']).addClass("animatedFadeInUp");--}}
+{{--            $(this[0,'element']).addClass("fadeInUp");--}}
+{{--        }, {--}}
+{{--        triggerOnce: true,--}}
+{{--        offset: '75%'--}}
+{{--        });--}}
+
+{{--        var yourWaypointInstance = new Waypoint({--}}
+{{--        element: document.getElementsByClassName('testUp'),--}}
+{{--        handler: function(direction) {--}}
+{{--        //do something--}}
+{{--        //then destroy:--}}
+{{--        yourWaypointInstance.destroy()--}}
+{{--        },--}}
+{{--        offset: 'bottom-in-view' //options--}}
+{{--        })--}}
 @endsection
+

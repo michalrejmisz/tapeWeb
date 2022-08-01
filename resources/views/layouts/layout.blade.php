@@ -11,7 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    {{-- scroll reveal   --}}
+{{--    <script src="https://unpkg.com/scrollreveal"></script>--}}
+    <script src="{{asset('js/scrollfade.js')}}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
