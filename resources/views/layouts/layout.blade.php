@@ -78,21 +78,21 @@
 
 {{--<div class="b-example-divider"></div>--}}
 <footer id="footer">
-    <div class="footer-newsletter">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h4>Nasz Newsletter</h4>
-                    <p>Zapisz się do naszego newslettera</p>
-                </div>
-                <div class="col-lg-6">
-                    <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subskrybuj">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+{{--    <div class="footer-newsletter">--}}
+{{--        <div class="container">--}}
+{{--            <div class="row">--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <h4>Nasz Newsletter</h4>--}}
+{{--                    <p>Zapisz się do naszego newslettera</p>--}}
+{{--                </div>--}}
+{{--                <div class="col-lg-6">--}}
+{{--                    <form action="" method="post">--}}
+{{--                        <input type="email" name="email"><input type="submit" value="Subskrybuj">--}}
+{{--                    </form>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="footer-top">
         <div class="container">
             <div class="row">
@@ -138,7 +138,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>o wTapes</h3>
-                    <p>Jesteśmy firmą oferującą taśmy. Znajdą Państwo u nas szeroką gamę produktów. </p>
+                    <p>Od 2016 roku jesteśmy firmą specjalizującą się w taśmach pakowych oraz w taśmach z nadrukiem. W naszej ofercie każdy znajdzie coś dla siebie, a jeżeli nie – pomożemy w wyborze. Nie boimy się żadnych wyzwań, zawsze spróbujemy pomóc tak, aby sprostać Państwa oczekiwaniom. </p>
 {{--                    <div class="social-links mt-3">--}}
 {{--                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>--}}
 {{--                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>--}}
