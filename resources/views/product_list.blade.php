@@ -6,10 +6,10 @@
             <div class="row">
                 <div id="left-column" class="py-3 col-xs-12 col-sm-4 col-md-3">
                     <div class="category-top-menu">
-                        <div class="pt-3 px-3 pb-1 bg-info"><p class="text-uppercase h6 pb-3 mb-2">Kategorie</p></div>
-                            <ul class="category-sub-menu bg-white mx-1 py-2">
+                        <div class="pt-3 px-3 pb-1 bg-info"><p class="text-uppercase h6 pb-3 mb-2">{{__("messages.categories")}}</p></div>
+                            <ul class="category-sub-menu bg-white ps-4 pe-4 mx-1 py-2">
                                 @foreach ($categories as $category)
-                                    <li><a href="{{route('products_by_category', $category->id)}}" @if( request()->route('id') == $category->id ) class="active" @endif">{{$category->name}}</a></li>
+                                    <li><a href="{{route('products_by_category', $category->id)}}" @if( request()->route('id') == $category->id ) class="active" @endif">@if(App::getLocale() == 'pl') {{$category->name_pl}} @elseif (App::getLocale() == 'en') {{$category->name_en}} @endif</a></li>
                                 @endforeach
                             </ul>
                     </div>
@@ -62,11 +62,11 @@
                                             <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5">
                                         </div>
                                         <div class="card-body">
-                                            <p class="card-text">{{$product->name}}</p>
+                                            <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">{{$product->name}}</p>
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="btn-group">
-                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#view-detail-product-{{$product->id}}" class="btn btn-sm btn-outline-secondary">Zobacz</button>
-                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#form-product" class="btn btn-sm btn-outline-secondary">Zapytaj o cenę</button>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#view-detail-product-{{$product->id}}" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.see")}}</button>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#form-product" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.askforprice")}}</button>
                                                 </div>
 {{--                                                <small class="text-muted">10 zł</small>--}}
                                             </div>
@@ -83,7 +83,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header border-0 text-center">
-                                <h3 class="modal-title text-center">Opis produktu</h3>
+                                <h3 class="modal-title text-center">{{__("messages.categories.productdescription")}}</h3>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         {{--                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
         {{--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
@@ -104,7 +104,7 @@
                                 </div>
                             </div>
                             <div class="modal-footer border-0">
-                                <button class="btn btn-primary" data-bs-target="#form-product" data-bs-toggle="modal" data-bs-dismiss="modal">Zapytaj o cenę</button>
+                                <button class="btn btn-primary" data-bs-target="#form-product" data-bs-toggle="modal" data-bs-dismiss="modal">{{__("messages.categories.askforprice")}}</button>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header border-0 text-center">
-                              <h3 class="modal-title d-flex justify-content-center text-center">Kontakt</h3>
+                              <h3 class="modal-title d-flex justify-content-center text-center">{{__("messages.contact")}}</h3>
                                 <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
                             </div>
 
@@ -125,43 +125,43 @@
                                 {{ csrf_field() }}
 
                                 <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="name" placeholder="Twoje Imię" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" aria-describedby="validationTooltipUsernamePrepend">
+                                    <input type="text" class="form-control" name="name" placeholder="{{__("messages.contact.form.yourname")}}" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" aria-describedby="validationTooltipUsernamePrepend">
                                     @if ($errors->has('name'))
                                         <span class="text-danger">{{ $errors->first('name') }}</span>
                                     @endif
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="email" placeholder="Twój email">
+                                    <input type="text" class="form-control" name="email" placeholder="{{__("messages.contact.form.yourmail")}}">
                                     @if ($errors->has('email'))
                                         <span class="text-danger">{{ $errors->first('email') }}</span>
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="subject" placeholder="Temat">
+                                    <input type="text" class="form-control" name="subject" placeholder="{{__("messages.contact.form.subject")}}">
                                     @if ($errors->has('subject'))
                                         <span class="text-danger">{{ $errors->first('subject') }}</span>
                                     @endif
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="phone" placeholder="Numer telefonu (opcjonalnie)" maxlength="9">
+                                    <input type="text" class="form-control" name="phone" placeholder="{{__("messages.contact.form.phonenumber")}}" maxlength="9">
                                     @if ($errors->has('phone'))
                                         <span class="text-danger">{{ $errors->first('phone') }}</span>
                                     @endif
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <textarea id="" cols="30" rows="7" name="message" class="form-control" placeholder="Wiadmość"></textarea>
+                                    <textarea id="" cols="30" rows="7" name="message" class="form-control" placeholder="{{__("messages.contact.form.message")}}"></textarea>
                                     @if ($errors->has('message'))
                                         <span class="text-danger">{{ $errors->first('message') }}</span>
                                     @endif
                                 </div>
 
                                 <div class="form-group mb-3">
-                                    <input type="submit" value="Wyślij wiadomość" id="submit" class="btn btn-primary py-3 px-5" onclick="formsubmit()">
+                                    <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5" onclick="formsubmit()">
                                 </div>
-                                <div id="message" class="alert alert-primary" role="alert" style="display:none;">Wiadomość została wysłana!</div>
+                                <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
                             </form>
                         </div>
                     </div>
@@ -202,21 +202,21 @@
         },
         messages: {
         name: {
-        required: "Wprowadź imię i nazwisko",
-        maxlength: "Przekroczono limit 100 znaków."
+        required: "{{__("messages.contact.form.validation.required.name")}}",
+        maxlength: "{{__("messages.contact.form.validation.mexlength.100")}}",
         },
         email: {
-        required: "Wprowadź poprawny adres email",
-        email: "Podaj poprawny adres email",
-        maxlength: "Przekroczono limit 100 znaków.",
+        required: "{{__("messages.contact.form.validation.required.email")}}",
+        email: "{{__("messages.contact.form.validation.required.email.wrongs")}}",
+        maxlength: "{{__("messages.contact.form.validation.mexlength.100")}}",
         },
         subject: {
-        required: "Wprowadź tytuł wiadomości",
-        maxlength: "Przekroczono limit 100 znaków."
+        required: "{{__("messages.contact.form.validation.required.subject")}}",
+        maxlength: "{{__("messages.contact.form.validation.mexlength.100")}}"
         },
         message: {
-        required: "Wprowadź treść wiadomości",
-        maxlength: "Przekroczono limit 500 znaków."
+        required: "{{__("messages.contact.form.validation.required.message")}}",
+        maxlength: "{{__("messages.contact.form.validation.mexlength.500")}}"
         },
         },
         submitHandler: function(form) {

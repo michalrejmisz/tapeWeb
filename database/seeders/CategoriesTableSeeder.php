@@ -15,12 +15,12 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        Category::create(['name' => 'Taśma pakowa']);
-        Category::create(['name' => 'Taśma z nadrukiem']);
-        Category::create(['name' => 'Taśma magazynowa']);
-        Category::create(['name' => 'Taśma ostrzegawcza']);
-        Category::create(['name' => 'Taśma specjalistyczna']);
-        Category::create(['name' => 'Folia Stretch']);
-        Category::create(['name' => 'Aplikatory']);
+        Category::create(['name_pl' => 'Taśma pakowa', 'name_en' => 'Packaging Tape']);
+        Category::create(['name_pl' => 'Taśma z nadrukiem', 'name_en' => 'Printed Tape']);
+        Category::create(['name_pl' => 'Taśma magazynowa', 'name_en' => 'Stock Tape']);
+        Category::create(['name_pl' => 'Taśma ostrzegawcza', 'name_en' => 'Caution Tape']);
+        Category::create(['name_pl' => 'Taśma specjalistyczna', 'name_en' => 'Specialist Tape']);
+        Category::create(['name_pl' => 'Folia Stretch', 'name_en' => 'Stretch Wrap']);
+        Category::create(['name_pl' => 'Aplikatory', 'name_en' => 'Applicators']);
     }
 }

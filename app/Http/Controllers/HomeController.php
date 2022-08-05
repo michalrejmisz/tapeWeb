@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App;
 
 class HomeController extends Controller
 {
@@ -39,5 +40,18 @@ class HomeController extends Controller
     public function product_by_category($id){
         $products=Product::where('category_id', $id)->get();
         return view('product_list')->with('products', $products);
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     */
+    public function changeLang(Request $request, $lang){
+
+        App::setLocale($lang);
+        $request->session()->put("lang_code", $lang);
+        return redirect()->back();
+
     }
 }

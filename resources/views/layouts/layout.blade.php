@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -51,6 +52,13 @@
 <main class="sticky-top shadow" style="background-color:#f8fafc">
     <div id="navbar">
         <div class="container">
+            <div>
+                Langauge {{App::getLocale()}} - {{session()->get("lang_code")}}: <select onchange="changeLanguage(this.value)" >
+                    <option {{session()->has('lang_code')?(session()->get('lang_code')=='pl'?'selected':''):''}} value="pl">Polski</option>
+                    <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>
+                </select>
+            </div>
+
             <header class="d-flex flex-wrap justify-content-center py-3">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <img src="{{asset('images/logo-dark.png')}}" width="200" height="50" alt="" />
@@ -58,10 +66,10 @@
                 </a>
                 <nav class="stroke">
                     <ul class="nav nav-pills fs-5">
-                        <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">Strona Główna</a></li>
-                        <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">Produkty</a></li>
-                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}" class="nav-link">O nas</a></li>
-                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">Kontakt</a></li>
+                        <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">{{__("messages.home")}}</a></li>
+                        <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">{{__("messages.products")}}</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}" class="nav-link">{{__("messages.about")}}</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">{{__("messages.contact")}}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -97,19 +105,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Użyteczne Linki</h4>
+                    <h4>{{__("messages.useful")}}</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i><a href="{{request()->routeIs('main') ? '#' : '/' }}">Strona Główna</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('products') ? '#' : '/products' }}">Produkty</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}">O nas</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}">Kontakt</a></li>
+                        <li><i class="bx bx-chevron-right"></i><a href="{{request()->routeIs('main') ? '#' : '/' }}">{{__("messages.home")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('products') ? '#' : '/products' }}">{{__("messages.products")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}">{{__("messages.about")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}">{{__("messages.contact")}}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Nasze produkty</h4>
+                    <h4>{{__("messages.ourproducts")}}</h4>
                     <ul>
                         @foreach ($categories as $category)
-                            <li><i class="bx bx-chevron-right"></i> <a @if( request()->route('id') == $category->id ) href="#"  @else href="{{route('products_by_category', $category->id)}}" @endif>{{$category->name}}</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a @if( request()->route('id') == $category->id ) href="#"  @else href="{{route('products_by_category', $category->id)}}" @endif>@if(App::getLocale() == 'pl') {{$category->name_pl}} @elseif (App::getLocale() == 'en') {{$category->name_en}} @endif </a></li>
                         @endforeach
 {{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt A</a></li>--}}
 {{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt B</a></li>--}}
@@ -119,7 +127,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <h4>Skontaktuj się</h4>
+                    <h4>{{__("messages.contactus")}}</h4>
                     <p> Os. Stefana Batorego 57 <br>
                         Poznań, 60-687<br>
                         <br>
@@ -137,8 +145,8 @@
                     </p>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-info">
-                    <h3>o wTapes</h3>
-                    <p>Od 2016 roku jesteśmy firmą specjalizującą się w taśmach pakowych oraz w taśmach z nadrukiem. W naszej ofercie każdy znajdzie coś dla siebie, a jeżeli nie – pomożemy w wyborze. Nie boimy się żadnych wyzwań, zawsze spróbujemy pomóc tak, aby sprostać Państwa oczekiwaniom. </p>
+                    <h3>{{__("messages.aboutwtapes")}}</h3>
+                    <p> {{__("messages.aboutwtapeslong")}} </p>
 {{--                    <div class="social-links mt-3">--}}
 {{--                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>--}}
 {{--                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>--}}
@@ -151,12 +159,16 @@
     </div>
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>wTapes</span></strong>. Wszystkie prawa zastrzeżone </div> <div class="credits"> Designed by <a href="#">Michał Rejmisz</a>
+            &copy; Copyright <strong><span>wTapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">Michał Rejmisz</a>
         </div>
     </div>
 </footer>
 <script type="text/javascript">
     @yield('javascript')
+
+    function changeLanguage(lang){
+        window.location='{{url("change-language")}}/'+lang;
+    }
 </script>
 
 
