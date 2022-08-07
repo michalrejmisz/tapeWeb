@@ -1,5 +1,8 @@
 <?php
 return [
+//    Language
+    "choose.language" => "Choose Language: ",
+
 //    Navbar
     "home" => "Home",
     "products" => "Products",

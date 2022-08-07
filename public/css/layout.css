@@ -31,6 +31,11 @@
     outline: 0;
 }
 
+.shadow-bottom{
+    /*height: 20px;*/
+    box-shadow: 0 -2rem 1rem rgb(0 0 0 / 15%) !important;
+}
+
 
 /* Navbar */
 #navbar .nav .nav-link{
@@ -868,5 +873,10 @@ main-page-contact-form .contact-form{
         transform: translate3d(0,0,0);
         opacity: 1
     }
+}
+
+.contact1-pic {
+    will-change: transform;
+    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
 }
 

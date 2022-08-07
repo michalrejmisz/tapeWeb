@@ -56,23 +56,25 @@
 {{--                            @endfor--}}
 
                             @foreach ($products as $product)
-                                <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
-                                    <div class="p-1 card shadow-sm">
-                                        <div class="thumbnail">
-                                            <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5">
-                                        </div>
-                                        <div class="card-body">
-                                            <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">{{$product->name}}</p>
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div class="btn-group">
-                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#view-detail-product-{{$product->id}}" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.see")}}</button>
-                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#form-product" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.askforprice")}}</button>
+                                @if((App::getLocale() == 'pl' && isset($product->name_pl)) or (App::getLocale() == 'en' && isset($product->name_en)))
+                                    <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
+                                        <div class="p-1 card shadow-sm">
+                                            <div class="thumbnail">
+                                                <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5">
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </p>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#view-detail-product-{{$product->id}}" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.see")}}</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#form-product" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.askforprice")}}</button>
+                                                    </div>
+    {{--                                                <small class="text-muted">10 zł</small>--}}
                                                 </div>
-{{--                                                <small class="text-muted">10 zł</small>--}}
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             @endforeach
                         </div>
                 </div>
@@ -97,9 +99,9 @@
                                     </div>
 
                                     <div class="col-md-6 order-first order-md-last">
-                                        <h1 class="h1 namne_details border-bottom-5 text-center mt-3">{{$product->name}}</h1>
+                                        <h1 class="h1 namne_details border-bottom-5 text-center mt-3">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </h1>
                                         <hr>
-                                        <h5 class="namne_details border-bottom-5">{{$product->description}}</h5>
+                                        <h5 class="namne_details border-bottom-5">@if(App::getLocale() == 'pl') {{$product->description_pl}} @elseif (App::getLocale() == 'en') {{$product->description_en}} @endif </h5>
                                     </div>
                                 </div>
                             </div>

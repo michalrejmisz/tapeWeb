@@ -27,7 +27,16 @@ class Language
     {
         if(session()->has("lang_code")){
             App::setLocale(session()->get("lang_code"));
+        } else {
+            $locale = substr($request->server('HTTP_ACCEPT_LANGUAGE'), 0, 2);
+
+            if ($locale != 'pl' && $locale != 'en') {
+                $locale = 'en';
+            }
+            App::setLocale($locale);
         }
+
+
         return $next($request);
     }
 }

@@ -49,20 +49,31 @@
 
 </head>
 <body>
-<main class="sticky-top shadow" style="background-color:#f8fafc">
+
+<div id="lang" style="background-color:#f8fafc; z-index: 6;">
+    <div class="container">
+        <div class="d-flex align-items-center justify-content-end" style="background-color:#f8fafc">
+            {{__("messages.choose.language")}}
+            <button onclick="changeLanguage(this.value)" value="pl" style="border: none; background-color:#f8fafc"><img style="width:25px; height:20px;" src="{{asset('images/poland.png')}}"></button>
+            <button onclick="changeLanguage(this.value)" value="en" style="border: none; background-color:#f8fafc"><img style="width:25px; height:20px;" src="{{asset('images/uk.png')}}"></button>
+{{--            Langauge {{App::getLocale()}} - {{session()->get("lang_code")}}: <select onchange="changeLanguage(this.value)" >--}}
+{{--                <option {{session()->has('lang_code')?(session()->get('lang_code')=='pl'?'selected':''):''}} value="pl">Polski</option>--}}
+{{--                <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>--}}
+{{--            </select>--}}
+        </div>
+    </div>
+</div>
+
+
+
+<main class="sticky-top shadow" style="background-color:#f8fafc; z-index: 6">
     <div id="navbar">
         <div class="container">
-            <div>
-                Langauge {{App::getLocale()}} - {{session()->get("lang_code")}}: <select onchange="changeLanguage(this.value)" >
-                    <option {{session()->has('lang_code')?(session()->get('lang_code')=='pl'?'selected':''):''}} value="pl">Polski</option>
-                    <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>
-                </select>
-            </div>
+
 
             <header class="d-flex flex-wrap justify-content-center py-3">
                 <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <img src="{{asset('images/logo-dark.png')}}" width="200" height="50" alt="" />
-    {{--                <span class="fs-3">Simple header</span>--}}
                 </a>
                 <nav class="stroke">
                     <ul class="nav nav-pills fs-5">
@@ -77,30 +88,14 @@
     </div>
 </main>
 
+
 <div style="background-color:#e0e3e3;height: 100%;">
-{{--    class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;"--}}
-{{--    <div class="b-example-divider"></div>--}}
     @yield('content')
 
 </div>
 
-{{--<div class="b-example-divider"></div>--}}
+
 <footer id="footer">
-{{--    <div class="footer-newsletter">--}}
-{{--        <div class="container">--}}
-{{--            <div class="row">--}}
-{{--                <div class="col-lg-6">--}}
-{{--                    <h4>Nasz Newsletter</h4>--}}
-{{--                    <p>Zapisz się do naszego newslettera</p>--}}
-{{--                </div>--}}
-{{--                <div class="col-lg-6">--}}
-{{--                    <form action="" method="post">--}}
-{{--                        <input type="email" name="email"><input type="submit" value="Subskrybuj">--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
     <div class="footer-top">
         <div class="container">
             <div class="row">
@@ -119,11 +114,6 @@
                         @foreach ($categories as $category)
                             <li><i class="bx bx-chevron-right"></i> <a @if( request()->route('id') == $category->id ) href="#"  @else href="{{route('products_by_category', $category->id)}}" @endif>@if(App::getLocale() == 'pl') {{$category->name_pl}} @elseif (App::getLocale() == 'en') {{$category->name_en}} @endif </a></li>
                         @endforeach
-{{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt A</a></li>--}}
-{{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt B</a></li>--}}
-{{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt C</a></li>--}}
-{{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt D</a></li>--}}
-{{--                        <li><i class="bx bx-chevron-right"></i> <a href="#">Produkt E</a></li>--}}
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-contact">
@@ -147,12 +137,6 @@
                 <div class="col-lg-3 col-md-6 footer-info">
                     <h3>{{__("messages.aboutwtapes")}}</h3>
                     <p> {{__("messages.aboutwtapeslong")}} </p>
-{{--                    <div class="social-links mt-3">--}}
-{{--                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>--}}
-{{--                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>--}}
-{{--                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>--}}
-{{--                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>--}}
-{{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -163,6 +147,7 @@
         </div>
     </div>
 </footer>
+<script src="{{asset('js/tilt.jquery.min.js')}}"></script>
 <script type="text/javascript">
     @yield('javascript')
 

@@ -279,8 +279,8 @@
 
 
 
-                <div class="row d-flex align-items-stretch g-0 block-9" style="display:flex;">
-                    <div class="col-md-6 order-md-last">
+                <div class="row d-flex align-items-stretch g-0 block-9 bg-light" style="display:flex;">
+                    <div class="col-md-8 order-md-last">
 
                         <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light p-5 contact-form h-100 gy-3">
                             {{ csrf_field() }}
@@ -322,14 +322,18 @@
                             <div class="form-group mb-3">
                                 <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5">
                             </div>
-                            <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
+                            <div id="message" class="alert alert-primary float-end" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
                         </form>
 
                     </div>
-                    <div class="col-md-6">
-                        <div id="map" class="bg-white" style="position: relative; overflow: hidden;">
-                            <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Stefana%20Batorego%2057,%20Pozna%C5%84+(wTapes)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/farm-gps/">gps for tractors</a></iframe></div>
-                        </div>
+                    <div class="col-md-4 d-flex align-items-center justify-content-center">
+{{--                        <div id="map" class="bg-white" style="position: relative; overflow: hidden;">--}}
+{{--                            <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Stefana%20Batorego%2057,%20Pozna%C5%84+(wTapes)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/farm-gps/">gps for tractors</a></iframe></div>--}}
+{{--                        </div>--}}
+
+                            <div class="contact1-pic js-tilt " data-tilt="" style="">
+                                <img src="images/contact.png" alt="IMG">
+                            </div>
                     </div>
                 </div>
             </div>
@@ -339,7 +343,14 @@
 @endsection
 
 @section('javascript')
-        $(".clickableBox").click(function() {
+
+    $('.js-tilt').tilt({
+        scale: 1.1
+    })
+
+
+
+    $(".clickableBox").click(function() {
             window.location = $(this).find("a").attr("href");
             return false;
         });
