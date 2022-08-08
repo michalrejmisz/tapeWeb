@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="d-flex min-vh-100 inline-block" id="slogan"  style="background-image: url('{{asset('images/bgshutter1920_2233.jpg')}}');">
+    <section class="d-flex min-vh-100 inline-block" id="slogan"  style="background-image: url('{{asset('images/bgshutter1920_2233.jpg')}}');">
 {{--        <div class="min-vh-50 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
 {{--            <h1 class="align-middle"><span>Z nami</span> się rozwiniesz</h1>--}}
 {{--            <h1>Bo <span>jakość</span> ma znaczenie</h1>--}}
@@ -31,7 +31,7 @@
 {{--                <div class="d-flex justify-content-center align-items-center">Zobacz produkty</div>--}}
             </div>
         </div>
-    </div>
+    </section>
 
 {{--    <div class="d-flex min-vh-100" id="slogan">--}}
 {{--                <div class="min-vh-50 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
@@ -131,7 +131,7 @@
     </div>
 
 
-    <div id="main-page-about-us" class="mb-5">
+    <section id="main-page-about-us" class="mb-5">
         <div style="background-color:white;">
             <div class="container">
                 <div class="row">
@@ -215,12 +215,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <br>
     <br>
 
-    <div id="main-page-contact-form" class="mt-5" style="padding-top:150px;">
+    <section id="main-page-contact-form" class="mt-5" style="padding-top:150px;">
         <div class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;">
 {{--        <div class="py-5 test min-vh-100" style="background-color:#0a53be;height: 100%;">--}}
             {{--    <div class="b-example-divider"></div>--}}
@@ -280,9 +280,9 @@
 
 
                 <div class="row d-flex align-items-stretch g-0 block-9 bg-light" style="display:flex;">
-                    <div class="col-md-8 order-md-last">
+                    <div class="col-lg-8 order-md-last">
 
-                        <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light p-5 contact-form h-100 gy-3">
+                        <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light ps-md-5 pe-5 py-5 contact-form h-100 gy-3">
                             {{ csrf_field() }}
 
                             <div class="form-group mb-3">
@@ -322,31 +322,48 @@
                             <div class="form-group mb-3">
                                 <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5">
                             </div>
-                            <div id="message" class="alert alert-primary float-end" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
+                            <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.form.message.sent")}}</div>
                         </form>
 
                     </div>
-                    <div class="col-md-4 d-flex align-items-center justify-content-center">
-{{--                        <div id="map" class="bg-white" style="position: relative; overflow: hidden;">--}}
-{{--                            <div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Stefana%20Batorego%2057,%20Pozna%C5%84+(wTapes)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/farm-gps/">gps for tractors</a></iframe></div>--}}
-{{--                        </div>--}}
 
-                            <div class="contact1-pic js-tilt " data-tilt="" style="">
-                                <img src="images/contact.png" alt="IMG">
-                            </div>
+                    <div class="col-md-4 d-none d-lg-flex align-items-center justify-content-center p-5">
+                        <div class="contact1-pic js-tilt " data-tilt="" style="">
+                            <img src="images/contact.png" alt="IMG">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection
 
 @section('javascript')
 
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
+
+
+{{--    // Change active navbar on scroll--}}
+{{--    const sections = document.querySelectorAll("section");--}}
+{{--    const navLi = document.querySelectorAll(".container nav ul li a");--}}
+{{--    window.onscroll = () => {--}}
+{{--        var current = "";--}}
+
+{{--        sections.forEach((section) => {--}}
+{{--            const sectionTop = section.offsetTop;--}}
+{{--            if (pageYOffset >= sectionTop - 60) {--}}
+{{--                current = section.getAttribute("id");--}}
+{{--            }--}}
+{{--    });--}}
+
+{{--    navLi.forEach((li) => {--}}
+{{--        li.classList.remove("active");--}}
+{{--        console.log(current)--}}
+{{--        if (li.href.includes(current)) {--}}
+{{--            li.classList.add('active');--}}
+{{--        }--}}
+{{--        });--}}
+{{--    };--}}
 
 
 
@@ -384,7 +401,7 @@
         },
         email: {
         required: "{{__("messages.contact.form.validation.required.email")}}",
-        email: "{{__("messages.contact.form.validation.required.email.wrongs")}}",
+        email: "{{__("messages.contact.form.validation.required.email.wrong")}}",
         maxlength: "{{__("messages.contact.form.validation.mexlength.100")}}",
         },
         subject: {
@@ -402,14 +419,14 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
         });
-        $('#submit').prop('value', 'Proszę czekać...');
+        $('#submit').prop('value', '{{__("messages.contact.form.please.wait")}}');
         $("#submit").attr("disabled", true);
         $.ajax({
         url: "{{route('contact.us.store')}}",
         type: "POST",
         data: $('#ajax-contact-form').serialize(),
         success: function( response ) {
-        $('#submit').prop('value', 'Wyślij wiadomdość');
+        $('#submit').prop('value', '{{__("messages.contact.form.send.message")}}');
         $("#submit"). attr("disabled", false);
         $('#message').fadeIn('slow', function(){
         $('#message').delay(3000).fadeOut();
@@ -420,6 +437,10 @@
         }
         })
         }
+
+        $('.js-tilt').tilt({
+        scale: 1.1
+        });
 
 {{--        ScrollReveal().reveal('#main-page-cards');--}}
 {{--        function reveal() {--}}

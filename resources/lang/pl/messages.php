@@ -66,6 +66,7 @@ return [
     "contact.form.message" => "Wiadomość",
     "contact.form.message.sent" => "Wiadomość została wysłana!",
     "contact.form.send.message" => "Wyślij wiadomość",
+    "contact.form.please.wait" => "Proszę czekać...",
 
     "contact.form.validation.required.name" => "Wprowadź imię i nazwisko",
     "contact.form.validation.required.message" => "Wprowadź treść wiadomości",

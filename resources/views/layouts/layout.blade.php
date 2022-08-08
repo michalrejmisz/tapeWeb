@@ -50,23 +50,19 @@
 </head>
 <body>
 
-<div id="lang" style="background-color:#f8fafc; z-index: 6;">
+<div id="lang" style="background-color:#f8fafc;">
     <div class="container">
         <div class="d-flex align-items-center justify-content-end" style="background-color:#f8fafc">
             {{__("messages.choose.language")}}
             <button onclick="changeLanguage(this.value)" value="pl" style="border: none; background-color:#f8fafc"><img style="width:25px; height:20px;" src="{{asset('images/poland.png')}}"></button>
             <button onclick="changeLanguage(this.value)" value="en" style="border: none; background-color:#f8fafc"><img style="width:25px; height:20px;" src="{{asset('images/uk.png')}}"></button>
-{{--            Langauge {{App::getLocale()}} - {{session()->get("lang_code")}}: <select onchange="changeLanguage(this.value)" >--}}
-{{--                <option {{session()->has('lang_code')?(session()->get('lang_code')=='pl'?'selected':''):''}} value="pl">Polski</option>--}}
-{{--                <option {{session()->has('lang_code')?(session()->get('lang_code')=='en'?'selected':''):''}} value="en">English</option>--}}
-{{--            </select>--}}
         </div>
     </div>
 </div>
 
 
 
-<main class="sticky-top shadow" style="background-color:#f8fafc; z-index: 6">
+<main class="sticky-top shadow" style="background-color:#f8fafc">
     <div id="navbar">
         <div class="container">
 
@@ -147,10 +143,12 @@
         </div>
     </div>
 </footer>
+
 <script src="{{asset('js/tilt.jquery.min.js')}}"></script>
 <script type="text/javascript">
     @yield('javascript')
 
+    // Change language function
     function changeLanguage(lang){
         window.location='{{url("change-language")}}/'+lang;
     }

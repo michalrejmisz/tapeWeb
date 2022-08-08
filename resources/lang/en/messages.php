@@ -70,6 +70,7 @@ return [
     "contact.form.message" => "Message",
     "contact.form.message.sent" => "The message has been sent!",
     "contact.form.send.message" => "Send message",
+    "contact.form.please.wait" => "Please wait...",
 
     "contact.form.validation.required.name" => "Enter first and last name",
     "contact.form.validation.required.message" => "Enter message content",
