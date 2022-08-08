@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .b-example-divider {
     height: 1.5rem;
     background-color: rgba(0, 0, 0, .1);
@@ -29,6 +33,11 @@
 
 .dropdown-toggle {
     outline: 0;
+}
+
+.shadow-bottom{
+    /*height: 20px;*/
+    box-shadow: 0 -2rem 1rem rgb(0 0 0 / 15%) !important;
 }
 
 
@@ -868,5 +877,10 @@ main-page-contact-form .contact-form{
         transform: translate3d(0,0,0);
         opacity: 1
     }
+}
+
+.contact1-pic {
+    will-change: transform;
+    transform: perspective(300px) rotateX(0deg) rotateY(0deg);
 }
 

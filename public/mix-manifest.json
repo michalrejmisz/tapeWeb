@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-    "/js/noframework.waypoints.js": "/js/noframework.waypoints.js",
+    "/js/tilt.jquery.min.js": "/js/tilt.jquery.min.js",
+    "/js/scrollfade.js": "/js/scrollfade.js",
     "/css/app.css": "/css/app.css",
     "/css/dashboard.css": "/css/dashboard.css",
     "/css/layout.css": "/css/layout.css"
