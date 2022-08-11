@@ -319,7 +319,22 @@
                                 @endif
                             </div>
 
-                            <div class="form-group mb-3">
+                            <div class="form-group mb-3 d-flex">
+                                <div class="pe-2">
+                                    <input class="form-check-input" name="rodo" type="checkbox" value="" id="flexCheckDefault">
+                                </div>
+                                <div>
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {{__("messages.rodo.checkbox")}}
+                                        <a href="#my-modal" data-bs-target="#privacypolicy"data-bs-toggle="modal" style="color:black;"><u>{{__("messages.rodo.seedetails")}}</u></a>.
+                                        {{--                                            @if ($errors->has('rodo'))--}}
+                                        {{--                                                <span class="text-danger">{{ $errors->first('rodo') }}</span>--}}
+                                        {{--                                            @endif--}}
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group my-4 d-flex float-end">
                                 <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5">
                             </div>
                             <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.form.message.sent")}}</div>
@@ -337,6 +352,25 @@
         </div>
     </section>
 
+
+    <div class="quickview modal fade" id="privacypolicy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0 text-center">
+                    <h3 class="modal-title d-flex justify-content-center text-center">{{__("messages.rodo.title")}}</h3>
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    {{__("messages.rodo.inside")}}
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button class="btn btn-primary" data-bs-target="#form-product" data-bs-toggle="modal" data-bs-dismiss="modal">{{__("messages.rodo.back")}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('javascript')
@@ -393,6 +427,9 @@
         required: true,
         maxlength: 500
         },
+        rodo: {
+        required: true,
+        },
         },
         messages: {
         name: {
@@ -412,6 +449,16 @@
         required: "{{__("messages.contact.form.validation.required.message")}}",
         maxlength: "{{__("messages.contact.form.validation.mexlength.500")}}"
         },
+        rodo: {
+        required: "{{__("messages.contact.form.validation.required.rodo")}}",
+        },
+        },
+        errorPlacement: function(error, element) {
+        if(element.attr("name") == "rodo") {
+        error.appendTo( element.parent("div").next("div") );
+        } else {
+        error.insertAfter(element);
+        }
         },
         submitHandler: function(form) {
         $.ajaxSetup({

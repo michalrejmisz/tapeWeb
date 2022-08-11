@@ -113,64 +113,102 @@
                 </div>
             @endforeach
 
-{{--            @foreach ($products as $product)--}}
-                <div class="quickview modal fade" id="form-product" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0 text-center">
-                              <h3 class="modal-title d-flex justify-content-center text-center">{{__("messages.contact")}}</h3>
-                                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+            <div class="quickview modal fade" id="form-product" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 text-center">
+                          <h3 class="modal-title d-flex justify-content-center text-center">{{__("messages.contact")}}</h3>
+                            <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                        </div>
+
+
+                        <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light p-5 contact-form h-100 gy-3">
+                            {{ csrf_field() }}
+
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" name="name" placeholder="{{__("messages.contact.form.yourname")}}" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" aria-describedby="validationTooltipUsernamePrepend">
+                                @if ($errors->has('name'))
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" name="email" placeholder="{{__("messages.contact.form.yourmail")}}">
+                                @if ($errors->has('email'))
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
+                            </div>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" name="subject" placeholder="{{__("messages.contact.form.subject")}}">
+                                @if ($errors->has('subject'))
+                                    <span class="text-danger">{{ $errors->first('subject') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" name="phone" placeholder="{{__("messages.contact.form.phonenumber")}}" maxlength="9">
+                                @if ($errors->has('phone'))
+                                    <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <textarea id="" cols="30" rows="7" name="message" class="form-control" placeholder="{{__("messages.contact.form.message")}}"></textarea>
+                                @if ($errors->has('message'))
+                                    <span class="text-danger">{{ $errors->first('message') }}</span>
+                                @endif
+                            </div>
+
+                            <div class="form-group mb-3 d-flex">
+                                    <div class="pe-2">
+                                        <input class="form-check-input" name="rodo" type="checkbox" value="" id="flexCheckDefault">
+                                    </div>
+                                    <div>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{__("messages.rodo.checkbox")}}
+                                            <a href="#my-modal" data-bs-target="#privacypolicy"data-bs-toggle="modal" style="color:black;"><u>{{__("messages.rodo.seedetails")}}</u></a>.
+{{--                                            @if ($errors->has('rodo'))--}}
+{{--                                                <span class="text-danger">{{ $errors->first('rodo') }}</span>--}}
+{{--                                            @endif--}}
+                                        </label>
+                                    </div>
                             </div>
 
 
-                            <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light p-5 contact-form h-100 gy-3">
-                                {{ csrf_field() }}
-
-                                <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="name" placeholder="{{__("messages.contact.form.yourname")}}" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGP6zwAAAgcBApocMXEAAAAASUVORK5CYII=&quot;); cursor: auto;" aria-describedby="validationTooltipUsernamePrepend">
-                                    @if ($errors->has('name'))
-                                        <span class="text-danger">{{ $errors->first('name') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="email" placeholder="{{__("messages.contact.form.yourmail")}}">
-                                    @if ($errors->has('email'))
-                                        <span class="text-danger">{{ $errors->first('email') }}</span>
-                                    @endif
-                                </div>
-                                <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="subject" placeholder="{{__("messages.contact.form.subject")}}">
-                                    @if ($errors->has('subject'))
-                                        <span class="text-danger">{{ $errors->first('subject') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group mb-3">
-                                    <input type="text" class="form-control" name="phone" placeholder="{{__("messages.contact.form.phonenumber")}}" maxlength="9">
-                                    @if ($errors->has('phone'))
-                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group mb-3">
-                                    <textarea id="" cols="30" rows="7" name="message" class="form-control" placeholder="{{__("messages.contact.form.message")}}"></textarea>
-                                    @if ($errors->has('message'))
-                                        <span class="text-danger">{{ $errors->first('message') }}</span>
-                                    @endif
-                                </div>
-
-                                <div class="form-group mb-3">
-                                    <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5" onclick="formsubmit()">
-                                </div>
-                                <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
-                            </form>
-                        </div>
+                            <div class="form-group mb-3 float-end">
+                                <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5" onclick="formsubmit()">
+                            </div>
+                            <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
+                        </form>
                     </div>
                 </div>
-{{--            @endforeach--}}
+            </div>
+
         </div>
     </div>
+
+
+    <div class="quickview modal fade" id="privacypolicy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0 text-center">
+                    <h3 class="modal-title d-flex justify-content-center text-center">{{__("messages.rodo.title")}}</h3>
+                    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    {{__("messages.rodo.inside")}}
+                </div>
+
+                <div class="modal-footer border-0">
+                    <button class="btn btn-primary" data-bs-target="#form-product" data-bs-toggle="modal" data-bs-dismiss="modal">{{__("messages.rodo.back")}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 @endsection
 
 @section('javascript')
@@ -201,6 +239,9 @@
         required: true,
         maxlength: 500
         },
+        rodo: {
+        required: true,
+        },
         },
         messages: {
         name: {
@@ -218,8 +259,18 @@
         },
         message: {
         required: "{{__("messages.contact.form.validation.required.message")}}",
-        maxlength: "{{__("messages.contact.form.validation.mexlength.500")}}"
+        maxlength: "{{__("messages.contact.form.validation.mexlength.500")}}",
         },
+        rodo: {
+        required: "{{__("messages.contact.form.validation.required.rodo")}}",
+        },
+        },
+        errorPlacement: function(error, element) {
+        if(element.attr("name") == "rodo") {
+        error.appendTo( element.parent("div").next("div") );
+        } else {
+        error.insertAfter(element);
+        }
         },
         submitHandler: function(form) {
         $.ajaxSetup({
@@ -227,14 +278,14 @@
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
         });
-        $('#submit').prop('value', 'Proszę czekać...');
+        $('#submit').prop('value', '{{__("messages.contact.form.please.wait")}}');
         $("#submit").attr("disabled", true);
         $.ajax({
         url: "{{route('contact.us.store')}}",
         type: "POST",
         data: $('#ajax-contact-form').serialize(),
         success: function( response ) {
-        $('#submit').prop('value', 'Wyślij wiadomdość');
+        $('#submit').prop('value', '{{__("messages.contact.form.send.message")}}');
         $("#submit"). attr("disabled", false);
         $('#message').fadeIn('slow', function(){
         $('#message').delay(3000).fadeOut();

@@ -77,8 +77,18 @@ return [
     "contact.form.validation.required.subject" => "Enter message subject",
     "contact.form.validation.required.email" => "Enter a valid email address",
     "contact.form.validation.required.email.wrong" => "Enter a valid email address",
+    "contact.form.validation.required.rodo" => "You must agree",
     "contact.form.validation.mexlength.100" =>  "The 100 character limit has been exceeded.",
     "contact.form.validation.mexlength.500" =>  "The 500 character limit has been exceeded.",
+
+//  RODO
+    "rodo.checkbox" => "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danch osobowych w związku z wysłaniem zapytania przez formularz kontaktowy ",
+    "rodo.seedetails" => "(kliknij aby zobaczyć szczegóły)",
+//    "rodo.checkbox" => "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danch osobowych w związku z wysłaniem zapytania przez formularz kontaktowy. Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Zostałem poinformowany, że przysługuje mi prawo do dostępu do swoich danych, możliwości ich poprawiania, żądania zaprzestania ich przetwarzania. Administratorem danych osobowych jest wTapes (kliknij aby zobaczyć szczegóły).",
+    "rodo.title" => "Privacy Policy",
+    "rodo.inside" => "Test",
+    "rodo.back" => "Back",
+
 
 //  Products Page
     "categories" => "Categories",
