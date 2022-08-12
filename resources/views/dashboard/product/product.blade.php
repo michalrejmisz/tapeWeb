@@ -5,10 +5,92 @@
 {{--        Form Add product  --}}
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProduct">
+        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addProduct2">
             Dodaj produkt
         </button>
 
+        <!-- Modal Product Added popup-->
+        <div class="modal fade" id="productAdded" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content bg-success">
+                    <div class="modal-body" style="color:white;">
+                        Dodano produkt!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Modal Add product-->
+        <div class="modal fade" id="addProduct2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" id="exampleModalLabel">Dodaj produkt</h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form method="post" action="{{route('products.store')}}" enctype="multipart/form-data" id="ajax-form2">
+                        @csrf
+                        <div class="modal-body">
+                                <input type="reset" value="Reset" hidden/>
+                                <div class="d-flex">
+                                    <div class="md-form mb-4 me-1 flex-fill">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
+                                        <label data-error="wrong" data-success="right" for="defaultForm-email">Nazwa produktu</label>
+                                        <input name="name_pl" id="name_pl" type="text" class="form-control validate">
+                                    </div>
+
+                                    <div class="md-form mb-4 flex-fill">
+                                        <i class="fas fa-envelope prefix grey-text"></i>
+                                        <label data-error="wrong" data-success="right" for="defaultForm-email">Nazwa produktu (ang)</label>
+                                        <input name="name_en" id="name_en" type="text" class="form-control validate">
+                                    </div>
+                                </div>
+
+
+                                <div class="d-flex">
+                                    <div class="md-form mb-4 me-1 flex-fill">
+                                        <i class="fas fa-lock prefix grey-text"></i>
+                                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu</label>
+                                        <textarea name="description_pl" id="description_pl" class="form-control validate" rows="5"></textarea>
+                                    </div>
+
+                                    <div class="md-form mb-4 flex-fill">
+                                        <i class="fas fa-lock prefix grey-text"></i>
+                                        <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu(ang)</label>
+                                        <textarea name="description_en" id="description_en" class="form-control validate" rows="5"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="md-form mb-4">
+                                    <label data-error="wrong" data-success="right" for="defaultForm-email">Kategoria</label>
+                                    <select name="category_id" id="category_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                        <option value="" selected disabled hidden>Wybierz kategorię</option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name_pl}}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('category_id')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+
+                                <div class="md-form mb-4">
+                                    <label class="form-label" for="customFile">Dodaj zdjęcie</label>
+                                    <input name="image" type="file" class="form-control" id="image" />
+                                </div>
+                                <div class="alert alert-danger" style="display:none"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                            <button id="ajaxSubmit" class="btn btn-primary">Dodaj</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
 {{--        <button class="btn btn-danger delete-product-button" role="button" data-delete-link="{{route('product.delete', '1')}}" data-bs-toggle="modal" data-bs-target="#delete-product-modal">Usuń</button>--}}
@@ -36,56 +118,7 @@
         </div>
 
 
-        <!-- Modal Add product-->
-        <form method="post" action="{{route('products.store')}}" enctype="multipart/form-data" id="form">
-            @csrf
-            <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="alert alert-danger" style="display:none"></div>
-                        <div class="modal-header text-center">
-                            <h4 class="modal-title" id="exampleModalLabel">Dodaj produkt</h4>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="md-form mb-4">
-                                <i class="fas fa-envelope prefix grey-text"></i>
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">Nazwa produktu</label>
-                                <input name="name" id="name" type="text" id="defaultForm-email" class="form-control validate">
-                            </div>
 
-                            <div class="md-form mb-4">
-                                <label data-error="wrong" data-success="right" for="defaultForm-email">Kategoria</label>
-                                <select name="category_id" id="category_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option selected>Wybierz kategorię</option>
-                                    @foreach ($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->name}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <div class="md-form mb-4">
-                                <i class="fas fa-lock prefix grey-text"></i>
-                                <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu</label>
-                                <textarea name="description" id="description" class="form-control validate" rows="5"></textarea>
-                            </div>
-
-                            <div class="md-form mb-4">
-                                <label class="form-label" for="customFile">Dodaj zdjęcie</label>
-                                <input name="image" type="file" class="form-control" id="image" />
-                            </div>
-
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
-                            <button id="ajaxSubmit" class="btn btn-primary">Dodaj</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-{{--        End of modal form add product--}}
         <table class="table table-bordered data-table" id="table">
             <thead>
             <tr>
@@ -208,16 +241,67 @@
 
 
 
-
+{{--<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>--}}
 <script type="text/javascript">
 
-    $('#ajaxSubmit').on('submit',function(e){
+    $('#ajax-form2').submit(function(e) {
+        e.preventDefault();
+        let formData = new FormData(this);
+        $('#file-input-error').text('');
+        $.ajax({
+            type:'POST',
+            url: "{{route('products.store')}}",
+            data: formData,
+            contentType: false,
+            processData: false,
+            success:function(result){
+                if(result.errors)
+                {
+                    jQuery('.alert-danger').html('');
+                    console.log(result.errors)
+                    jQuery.each(result.errors, function(key, value){
+                        jQuery('.alert-danger').show();
+                        jQuery('.alert-danger').append('<li>'+value+'</li>');
+                    });
+                }
+                else
+                {
+                    console.log("Dodano")
+                    jQuery('.alert-danger').hide();
+                    $('#open').hide();
+                    $('#addProduct2').modal('hide');
+                    $("#ajax-form2").trigger('reset');
+                    $(function () {
+                        $('#productAdded').modal('show');
+                        setTimeout(function () {
+                            $('#productAdded').modal('hide');
+                        }, 1500);
+                    });
+                }
+            },
+            error: function(response) {
+                // console.log(response)
+                // $('#nameErrorMsg').text(response.responseJSON.errors.name_pl);
+                // $('#emailErrorMsg').text(response.responseJSON.errors.email);
+                // $('#mobileErrorMsg').text(response.responseJSON.errors.mobile);
+                // $('#messageErrorMsg').text(response.responseJSON.errors.message);
+            },
+        });
+    });
+
+
+    console.log("TEST CZY DZIALA")
+    $('#ajax-form').submit(function(e){
+        console.log("TEST CZY DZIALA2")
         e.preventDefault();
         var formData = new FormData(this);
-        let name = $('#name').val();
+        let name_pl = $('#name_pl').val();
+        let name_en = $('#name_en').val();
         let category_id = $('#category_id').val();
-        let description = $('#description').val();
+        let description_pl = $('#description_pl').val();
+        let description_en = $('#description_en').val();
         let image = $('#image').val();
+        console.log(formData)
 
         $.ajax({
             url: "{{route('products.store')}}",
@@ -237,11 +321,12 @@
                 {
                     jQuery('.alert-danger').hide();
                     $('#open').hide();
-                    $('#addProduct').modal('hide');
+                    $('#addProduct2').modal('hide');
+                    $("#ajax-form2").trigger('reset');
                 }
             },
             error: function(response) {
-                $('#nameErrorMsg').text(response.responseJSON.errors.name);
+                $('#nameErrorMsg').text(response.responseJSON.errors.name_pl);
                 $('#emailErrorMsg').text(response.responseJSON.errors.email);
                 $('#mobileErrorMsg').text(response.responseJSON.errors.mobile);
                 $('#messageErrorMsg').text(response.responseJSON.errors.message);
@@ -252,14 +337,13 @@
 
 <script type="text/javascript">
     $(function () {
-        console.log("test?")
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
             ajax: "{{ route('products.index') }}",
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'name', name: 'name'},
+                {data: 'name_pl', name: 'name_pl'},
                 {data: 'image', name: 'image', render: function (data, type, full, meta) {
                         return "<img src=\"\\images\\product\\" + data + "\" height=\"100\"/>";
                     } },

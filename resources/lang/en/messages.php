@@ -94,5 +94,5 @@ return [
     "categories" => "Categories",
     "categories.see" => "See more",
     "categories.askforprice" => "Ask for price",
-    "categories.productdescription" => "Product Desription",
+    "categories.productdescription" => "Product Description",
 ];

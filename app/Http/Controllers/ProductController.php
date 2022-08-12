@@ -23,7 +23,7 @@ class ProductController extends Controller
 //        $data = Product::latest()->get();
 
         $products = Product::join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(['products.id', 'products.name', 'products.description as description', 'products.image', 'products.category_id', 'categories.name as xyz']);
+            ->select(['products.id', 'products.name_pl', 'products.name_en',  'products.description_pl', 'products.description_en', 'products.image', 'products.category_id', 'categories.name_pl as xyz']);
 
         $data = Product::latest()->get();
         return Datatables::of($products)
@@ -54,11 +54,16 @@ class ProductController extends Controller
     {
 
         $validator = \Validator::make($request->all(), [
-            'name' => 'required',
+            'name_pl' => 'required',
             'category_id' => 'required',
-            'description' => 'required',
+//            'description_pl' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        ],
+        [
+            'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
+            'category_id.required' => "Wybierz kategorię",
+        ]
+        );
 
         if ($validator->fails())
         {
@@ -75,9 +80,17 @@ class ProductController extends Controller
         }
 
         $product= new Product();
-        $product->name=$request->get('name');
+        $product->name_pl=$request->get('name_pl');
         $product->category_id=$request->get('category_id');
-        $product->description=$request->get('description');
+        if($request->has('name_en')){
+            $product->name_en=$request->get('name_en');
+        }
+        if($request->has('description_pl')){
+            $product->description_pl=$request->get('description_pl');
+        }
+        if($request->has('description_en')){
+            $product->description_en=$request->get('description_en');
+        }
         $product->image=$profileImage;
         $product->save();
 

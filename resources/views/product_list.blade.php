@@ -178,7 +178,7 @@
                             <div class="form-group mb-3 float-end">
                                 <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5" onclick="formsubmit()">
                             </div>
-                            <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.for.message.sent")}}</div>
+                            <div id="message" class="alert alert-primary" role="alert" style="display:none;">{{__("messages.contact.form.message.sent")}}</div>
                         </form>
                     </div>
                 </div>
