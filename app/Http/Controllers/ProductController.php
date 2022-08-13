@@ -126,12 +126,55 @@ class ProductController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $validator = \Validator::make($request->all(), [
+            'name_pl' => 'required',
+            'category_id' => 'required',
+//            'description_pl' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ],
+            [
+                'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
+                'category_id.required' => "Wybierz kategorię",
+            ]
+        );
+
+        if ($validator->fails())
+        {
+            return response()->json(['errors'=>$validator->errors()->all()]);
+        }
+
+        if ($image = $request->file('image')) {
+            $destinationPath = 'images/product/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
+        $product= Product::find($id);
+        if (empty($product)){
+            $product = new Product;
+        }
+
+        $product->name_pl=$request->get('name_pl');
+        $product->category_id=$request->get('category_id');
+        if($request->has('name_en')){
+            $product->name_en=$request->get('name_en');
+        }
+        if($request->has('description_pl')){
+            $product->description_pl=$request->get('description_pl');
+        }
+        if($request->has('description_en')){
+            $product->description_en=$request->get('description_en');
+        }
+        if($request->has('image')){
+            $product->image=$profileImage;
+        }
+
+        $product->save();
         return redirect()->back()->with('success', 'your message,here');
     }
 

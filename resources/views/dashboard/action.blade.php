@@ -53,6 +53,7 @@
                             <img src="{{URL::asset('images/product/' . $image)}}" height="300"/>
                         </div>
                         <div class="col-9">
+                            <input id="id_prod" name="id_prod" value="{{$id}}" hidden>
                             <div class="d-flex">
                                 <div class="md-form mb-4 me-1 flex-fill">
                                     <i class="fas fa-envelope prefix grey-text"></i>
