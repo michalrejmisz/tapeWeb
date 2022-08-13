@@ -302,60 +302,59 @@
     });
 
     // Update product
-    $('#form-update').submit(function(e) {
-        console.log("Test update")
-        var id = $('#id').val();
-        console.log(id);
-        var url = '{{ route("product.update", ":id") }}';
-        e.preventDefault();
-        let formData = new FormData(this);
-        $('#file-input-error').text('');
-        $.ajax({
-            type:'POST',
-            url: url,
-            data: formData,
-            contentType: false,
-            processData: false,
-            success:function(result){
-                if(result.errors)
-                {
-                    jQuery('.alert-danger').html('');
-                    console.log(result.errors)
-                    jQuery.each(result.errors, function(key, value){
-                        jQuery('.alert-danger').show();
-                        jQuery('.alert-danger').append('<li>'+value+'</li>');
-                    });
-                }
-                else
-                {
-                    console.log("Dodano")
-                    jQuery('.alert-danger').hide();
-                    $('#open').hide();
-                    $('#form-update').modal('hide');
-                    $("#form-update").trigger('reset');
-                    $(function () {
-                        $('#productAdded').modal('show');
-                        setTimeout(function () {
-                            $('#productAdded').modal('hide');
-                        }, 1500);
-                    });
-                }
-            },
-            error: function(response) {
-                // console.log(response)
-                // $('#nameErrorMsg').text(response.responseJSON.errors.name_pl);
-                // $('#emailErrorMsg').text(response.responseJSON.errors.email);
-                // $('#mobileErrorMsg').text(response.responseJSON.errors.mobile);
-                // $('#messageErrorMsg').text(response.responseJSON.errors.message);
-            },
+    $(document).ready(function () {
+        $('#form-update-45').submit(function(e) {
+            console.log("Test update")
+            var id = $('#id').val();
+            console.log(id);
+            var url = '{{ route("product.update", ":id") }}';
+            e.preventDefault();
+            let formData = new FormData(this);
+            $('#file-input-error').text('');
+            $.ajax({
+                type:'POST',
+                url: url,
+                data: formData,
+                contentType: false,
+                processData: false,
+                success:function(result){
+                    if(result.errors)
+                    {
+                        jQuery('.alert-danger').html('');
+                        console.log(result.errors)
+                        jQuery.each(result.errors, function(key, value){
+                            jQuery('.alert-danger').show();
+                            jQuery('.alert-danger').append('<li>'+value+'</li>');
+                        });
+                    }
+                    else
+                    {
+                        console.log("Zaktualizowano")
+                        jQuery('.alert-danger').hide();
+                        $('#open').hide();
+                        $('#form-update').modal('hide');
+                        $("#form-update").trigger('reset');
+                        $(function () {
+                            $('#productUpdated').modal('show');
+                            setTimeout(function () {
+                                $('#productUpdated').modal('hide');
+                            }, 1500);
+                        });
+                    }
+                },
+                error: function(response) {
+                    // console.log(response)
+                    // $('#nameErrorMsg').text(response.responseJSON.errors.name_pl);
+                    // $('#emailErrorMsg').text(response.responseJSON.errors.email);
+                    // $('#mobileErrorMsg').text(response.responseJSON.errors.mobile);
+                    // $('#messageErrorMsg').text(response.responseJSON.errors.message);
+                },
+            });
         });
     });
 
 
-
-    console.log("TEST CZY DZIALA")
     $('#ajax-form').submit(function(e){
-        console.log("TEST CZY DZIALA2")
         e.preventDefault();
         var formData = new FormData(this);
         let name_pl = $('#name_pl').val();

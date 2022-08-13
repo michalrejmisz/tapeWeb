@@ -37,7 +37,7 @@
 </div>
 
 {{-- Edytuj--}}
-<form method="post" action="{{route('product.update', $id)}}" enctype="multipart/form-data" id="form-update">
+<form method="post" action="{{route('product.update', $id)}}" enctype="multipart/form-data" id="form-update-{{$id}}">
     @csrf
     <div class="modal fade" id="addProduct-{{$id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
@@ -108,9 +108,10 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
-                    <button id="ajaxSubmit-{{$id}}" class="btn btn-primary">Aktualizuj</button>
+                    <button id="ajaxSubmit" class="btn btn-primary">Aktualizuj</button>
                 </div>
             </div>
         </div>
     </div>
 </form>
+

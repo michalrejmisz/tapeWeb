@@ -17,10 +17,26 @@
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
 </head>
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:#343a40">
+<nav class="sb-topnav navbar navbar-expand navbar-dark row" style="background-color:#343a40">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="#" style="color:white">wTape</a>
+        <div class="col">
+            <a class="navbar-brand ps-3" href="#" style="color:white">wTape</a>
+        </div>
 
+        <div class="col">
+            <div class="float-end me-3">
+                <a class="" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();" style="text-decoration:none; color:white">
+                    Wyloguj
+                </a>
+            </div>
+
+        </div>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
 </nav>
 <div id="layoutSidenav">
     <div id="layoutSidenav_nav">
