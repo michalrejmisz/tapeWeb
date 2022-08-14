@@ -53,10 +53,14 @@ table, th, td {
     font-size: 16px;
     font-weight: 500;
     color: #000 !important;
-    margin-left: 40px
+    margin-left: 40px;
 }
 
-
+@media only screen and (max-width: 768px) {
+    #navbar .nav .nav-link{
+        margin-left: 10px;
+    }
+}
 
 #navbar .nav .nav-item .active{
     background: none;

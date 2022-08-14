@@ -68,7 +68,7 @@
 
 
             <header class="d-flex flex-wrap justify-content-center py-3">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                     <img src="{{asset('images/logo-dark.png')}}" width="200" height="50" alt="" />
                 </a>
                 <nav class="stroke">
