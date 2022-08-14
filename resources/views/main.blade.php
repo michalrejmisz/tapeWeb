@@ -362,7 +362,7 @@
                 </div>
 
                 <div class="modal-body">
-                    {{__("messages.rodo.inside")}}
+                    @include('rodo.documentpl')
                 </div>
 
                 <div class="modal-footer border-0">
@@ -374,34 +374,78 @@
 @endsection
 
 @section('javascript')
-
-
-
-{{--    // Change active navbar on scroll--}}
-{{--    const sections = document.querySelectorAll("section");--}}
-{{--    const navLi = document.querySelectorAll(".container nav ul li a");--}}
-{{--    window.onscroll = () => {--}}
-{{--        var current = "";--}}
-
-{{--        sections.forEach((section) => {--}}
-{{--            const sectionTop = section.offsetTop;--}}
-{{--            if (pageYOffset >= sectionTop - 60) {--}}
-{{--                current = section.getAttribute("id");--}}
-{{--            }--}}
-{{--    });--}}
-
-{{--    navLi.forEach((li) => {--}}
-{{--        li.classList.remove("active");--}}
-{{--        console.log(current)--}}
-{{--        if (li.href.includes(current)) {--}}
-{{--            li.classList.add('active');--}}
-{{--        }--}}
+{{--        $(document).ready(function () {--}}
+{{--            $(window).scroll(function (e){--}}
+{{--                let windowTop = $(this).scrollTop();--}}
+{{--                $('.nav a').each(function (event) {--}}
+{{--                    console.log(windowTop)--}}
+{{--                    if (windowTop >= $($(this).attr('href')).offset().top - 100) {--}}
+{{--                     // Remove 'active' from previously highlighted menu items--}}
+{{--                        $('.nav .active').removeClass('active');--}}
+{{--                        // Highlight the current menu item by adding 'active' class--}}
+{{--                        $(this).addClass('active');--}}
+{{--                     }--}}
+{{--                });--}}
+{{--            });--}}
 {{--        });--}}
-{{--    };--}}
 
 
+        const scrollHandler = () => {
+        console.log("scroll handler")
+        console.log(document.querySelectorAll('.nav-link')[0])
+        console.log(document.querySelectorAll('.nav-link')[1])
+        console.log(document.querySelectorAll('.nav-link')[2])
+        console.log(document.querySelectorAll('.nav-link')[0].classList)
+        let menu = document.querySelector('#navbar')
 
-    $(".clickableBox").click(function() {
+        let A = document.getElementById('slogan')
+        let B = document.getElementById('main-page-products')
+        let C = document.getElementById('main-page-about-us')
+        let D = document.getElementById('main-page-contact-form')
+        let pos_menu = window.pageYOffset + menu.offsetHeight
+
+        let pos_A = A.offsetTop + A.offsetHeight
+        let pos_B = B.offsetTop + B.offsetHeight
+        let pos_C = C.offsetTop + C.offsetHeight
+        let pos_D = D.offsetTop + D.offsetHeight
+
+        let distance_A = pos_A - pos_menu
+        let distance_B = pos_B - pos_menu
+        let distance_C = pos_C - pos_menu
+        let distance_D = pos_D - pos_menu
+
+        let min = Math.min(...[distance_A, distance_B, distance_C, distance_D].filter(num => num > 0))
+
+        document.querySelectorAll('.nav-link')[0].classList.remove('active')
+        document.querySelectorAll('.nav-link')[1].classList.remove('active')
+        document.querySelectorAll('.nav-link')[2].classList.remove('active')
+        document.querySelectorAll('.nav-link')[3].classList.remove('active')
+
+        if(min === distance_A){
+            console.log("IN A")
+            document.querySelectorAll('.nav-link')[0].classList.add('active')
+
+        }
+        if(min === distance_B){
+            console.log("IN B")
+            document.querySelectorAll('.nav-link')[1].classList.add('active')
+        }
+        if(min === distance_C){
+            console.log("IN C")
+            document.querySelectorAll('.nav-link')[2].classList.add('active')
+        }
+
+        if(min === distance_D){
+            console.log("IN D")
+            document.querySelectorAll('.nav-link')[3].classList.add('active')
+        }
+
+        }
+
+        window.addEventListener('scroll', scrollHandler)
+
+
+$(".clickableBox").click(function() {
             window.location = $(this).find("a").attr("href");
             return false;
         });

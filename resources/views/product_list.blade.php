@@ -197,7 +197,7 @@
                 </div>
 
                 <div class="modal-body">
-                    {{__("messages.rodo.inside")}}
+                    @include('rodo.documentpl')
                 </div>
 
                 <div class="modal-footer border-0">

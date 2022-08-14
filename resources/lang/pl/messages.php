@@ -82,7 +82,7 @@ return [
     "rodo.seedetails" => "(kliknij aby zobaczyć szczegóły)",
 //    "rodo.checkbox" => "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danch osobowych w związku z wysłaniem zapytania przez formularz kontaktowy. Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Zostałem poinformowany, że przysługuje mi prawo do dostępu do swoich danych, możliwości ich poprawiania, żądania zaprzestania ich przetwarzania. Administratorem danych osobowych jest wTapes (kliknij aby zobaczyć szczegóły).",
     "rodo.title" => "Polityka prywatności",
-    "rodo.inside" => "Test",
+
     "rodo.back" => "Wróć",
 
 
@@ -91,4 +91,49 @@ return [
     "categories.see" => "Zobacz",
     "categories.askforprice" => "Zapytaj o cenę",
     "categories.productdescription" => "Opis produktu",
+
+
+
+
+    "rodo.inside" => "  1. Administratorem danych osobowych podanych w dostępnych na stronie internetowej
+                        formularzach kontaktowym jest Ramirent S.A. z siedzibą w Szczecinie, ul. Świerczewska 3, 71-
+                        066 Szczecin. </br>
+                        2. Pani / Pana dane osobowe przetwarzane będą w następujących celach i w oparciu o
+                        następujące podstawy prawne:
+                        Cel przetwarzania danych Podstawa prawna przetwarzania danych
+                        Udzielenie odpowiedzi na wiadomość
+                        przesłaną za pomocą formularza
+                        kontaktowego.
+                        art. 6 ust. 1 lit. f) Ogólnego rozporządzenia o
+                        ochronie danych (prawnie uzasadniony
+                        interes – nawiązanie kontaktu z adresatem
+                        pytania)
+                        Podjęcie działań w celu rozpatrzenia
+                        zgłoszonej awarii / reklamacji.
+                        art. 6 ust. 1 lit. b) Ogólnego rozporządzenia o
+                        ochronie danych (wykonanie umowy)
+                        art. 6 ust. 1 lit. c) Ogólnego rozporządzenia o
+                        ochronie danych (obowiązek prawny)
+                        Przedstawienie szczegółów oferty w związku
+                        z przesłanym zapytaniem ofertowym.
+                        art. 6 ust. 1 lit. f) Ogólnego rozporządzenia o
+                        ochronie danych (prawnie uzasadniony
+                        interes – odpowiedź na otrzymane zapytanie
+                        ofertowe)
+                        Poznanie opinii na temat świadczonych przez
+                        Ramirent usług, oferowanego sprzętu oraz
+                        obsługi w oddziałach.
+                        art. 6 ust. 1 lit. f) Ogólnego rozporządzenia o
+                        ochronie danych (prawnie uzasadniony
+                        interes – podnoszenie jakości świadczonych
+                        usług)
+                        3. Odbiorcami Pani / Pana danych osobowych będą: firma zarządzająca stroną internetową, a
+                        także podmioty upoważnione do odbioru danych na podstawie przepisów prawa.
+                        4. Okres przechowywania Pani / Pana danych osobowych zgromadzonych przez Spółkę
+                        uzależniony jest od celu, w którym Pani / Pana dane są przetwarzane, zgodnie z poniższymi
+                        kryteriami:
+                        a. okres niezbędny do rozpatrzenia złożonej reklamacji – w przypadku przetwarzania
+                        danych w celu obsługi procesu składanych reklamacji,
+                        5. do momentu wniesienia przez Panią / Pana sprzeciwu – w przypadku przetwarzania
+                        danych w celu odpowiedzi na przesłane zapytania oraz badania opinii klientów. ",
 ];

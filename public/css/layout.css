@@ -2,6 +2,13 @@ html {
     scroll-behavior: smooth;
 }
 
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+
 .b-example-divider {
     height: 1.5rem;
     background-color: rgba(0, 0, 0, .1);

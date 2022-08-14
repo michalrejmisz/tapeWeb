@@ -73,8 +73,8 @@
                 </a>
                 <nav class="stroke">
                     <ul class="nav nav-pills fs-5">
-                        <li class="nav-item"><a href="/" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">{{__("messages.home")}}</a></li>
-                        <li class="nav-item"><a href="{{route('products_all')}}" class="nav-link {{request()->routeIs('product') ? 'active' : '' }}">{{__("messages.products")}}</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#slogan' : '/' }}" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">{{__("messages.home")}}</a></li>
+                        <li class="nav-item"><a href="{{route('products_by_category', 1)}}" class="nav-link {{request()->routeIs('products_by_category') ? 'active' : '' }}">{{__("messages.products")}}</a></li>
                         <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}" class="nav-link">{{__("messages.about")}}</a></li>
                         <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">{{__("messages.contact")}}</a></li>
                     </ul>
@@ -98,7 +98,7 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>{{__("messages.useful")}}</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i><a href="{{request()->routeIs('main') ? '#' : '/' }}">{{__("messages.home")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#slogan' : '/' }}">{{__("messages.home")}}</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('products') ? '#' : '/products' }}">{{__("messages.products")}}</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}">{{__("messages.about")}}</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}">{{__("messages.contact")}}</a></li>
