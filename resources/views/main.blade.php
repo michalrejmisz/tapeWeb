@@ -282,7 +282,7 @@
                 <div class="row d-flex align-items-stretch g-0 block-9 bg-light" style="display:flex;">
                     <div class="col-lg-8 order-md-last">
 
-                        <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light ps-md-5 pe-5 py-5 contact-form h-100 gy-3">
+                        <form method="POST" action="javascript:void(0)" id="ajax-contact-form" name="ajax-contact-form" class="bg-light ps-5 pe-5 py-5 contact-form h-100 gy-3">
                             {{ csrf_field() }}
 
                             <div class="form-group mb-3">

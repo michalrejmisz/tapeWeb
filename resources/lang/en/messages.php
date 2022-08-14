@@ -86,7 +86,6 @@ return [
     "rodo.seedetails" => "(kliknij aby zobaczyć szczegóły)",
 //    "rodo.checkbox" => "Wyrażam zgodę na przetwarzanie danych osobowych zgodnie z ustawą o ochronie danch osobowych w związku z wysłaniem zapytania przez formularz kontaktowy. Podanie danych jest dobrowolne, ale niezbędne do przetworzenia zapytania. Zostałem poinformowany, że przysługuje mi prawo do dostępu do swoich danych, możliwości ich poprawiania, żądania zaprzestania ich przetwarzania. Administratorem danych osobowych jest wTapes (kliknij aby zobaczyć szczegóły).",
     "rodo.title" => "Privacy Policy",
-    "rodo.inside" => "Test",
     "rodo.back" => "Back",
 
 
