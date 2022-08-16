@@ -149,6 +149,7 @@
                 <th>Zdjęcie</th>
                 <th>Kategoria</th>
                 <th>Ukryty</th>
+                <th>Angielski</th>
                 <th>Akcja</th>
             </tr>
             </thead>
@@ -327,6 +328,13 @@
                     }
                     }},
                 // {data: 'des', name: 'description'},
+                {data: 'name_en', name: 'name_en', render: function(data){
+                    if(data){
+                        return "Tak"
+                    }else {
+                        return "NIe"
+                    }
+                    }},
                 {data: 'action', name: 'akcja', orderable: false, searchable: false},
             ],
             language: {

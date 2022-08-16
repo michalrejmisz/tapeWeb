@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -156,6 +157,17 @@ class ProductController extends Controller
         }
 
         $product= Product::find($id);
+
+        if($request->has('image')){
+            $image_old = $product->image;
+            if($image != 'no-thumb.png'){
+                if(File::exists(public_path('images/product/'.$image_old))) {
+                    File::delete(public_path('images/product/'.$image_old));
+                }
+            }
+        }
+
+
         if (empty($product)){
             $product = new Product;
         }
@@ -190,7 +202,14 @@ class ProductController extends Controller
     public function destroy($id)
     {
         $product = Product::find($id);
+        $image = $product->image;
         $product->delete();
+
+        if($image != 'no-thumb.png'){
+            if(File::exists(public_path('images/product/'.$image))) {
+                File::delete(public_path('images/product/'.$image));
+            }
+        }
 
 //        return Response()->json($product);
         return redirect()->back()->with('success', 'your message,here');
