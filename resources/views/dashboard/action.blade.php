@@ -49,8 +49,8 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-3">
-                            <img src="{{URL::asset('images/product/' . $image)}}" height="300"/>
+                        <div class="col-3 align-middle">
+                            <img src="{{URL::asset('images/product/' . $image)}}" height="280" width="280"/>
                         </div>
                         <div class="col-9">
                             <input id="id_prod" name="id_prod" value="{{$id}}" hidden>
@@ -85,7 +85,7 @@
                             <div class="md-form mb-4">
                                 <label data-error="wrong" data-success="right" for="defaultForm-email">Kategoria</label>
                                 <select name="category_id" id="category_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                                    <option value="{{$category_id}}">{{$xyz}}</option>
+                                    <option value="{{$category_id}}">{{$categoryName}}</option>
                                     @foreach ($categories as $category)
                                         @if($category_id != $category->id)
                                             <option value="{{$category->id}}">{{$category->name_pl}}</option>
@@ -94,11 +94,22 @@
                                 </select>
                             </div>
 
-
                             <div class="md-form mb-4">
                                 <label class="form-label" for="customFile">Dodaj zdjęcie</label>
                                 <input name="image" type="file" class="form-control" id="image" />
                             </div>
+
+                            Ukryty:
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="hidden" id="inlineRadio1" value="0" @if($hidden == 0) checked @endif>
+                                <label class="form-check-label" for="inlineRadio1">Nie</label>
+                            </div>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="hidden" id="inlineRadio2" value="1" @if($hidden == 1) checked @endif>
+                                <label class="form-check-label" for="inlineRadio2">Tak</label>
+                            </div>
+
                             <div class="alert alert-danger" style="display:none;">a</div>
                         </div>
 

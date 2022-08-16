@@ -23,7 +23,7 @@ class ProductController extends Controller
 //        $data = Product::latest()->get();
 
         $products = Product::join('categories', 'products.category_id', '=', 'categories.id')
-            ->select(['products.id', 'products.name_pl', 'products.name_en',  'products.description_pl', 'products.description_en', 'products.image', 'products.category_id', 'categories.name_pl as xyz']);
+            ->select(['products.id', 'products.name_pl', 'products.name_en',  'products.description_pl', 'products.description_en', 'products.image', 'products.hidden', 'products.category_id', 'categories.name_pl as categoryName']);
 
         $data = Product::latest()->get();
         return Datatables::of($products)
@@ -91,6 +91,7 @@ class ProductController extends Controller
         if($request->has('description_en')){
             $product->description_en=$request->get('description_en');
         }
+        $product->hidden=$request->get('hidden');
         $product->image=$profileImage;
         $product->save();
 
@@ -173,6 +174,8 @@ class ProductController extends Controller
         if($request->has('image')){
             $product->image=$profileImage;
         }
+        $product->hidden=$request->get('hidden');
+
 
         $product->save();
         return redirect()->back()->with('success', 'your message,here');

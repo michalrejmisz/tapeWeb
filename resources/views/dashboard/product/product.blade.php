@@ -92,6 +92,17 @@
                                     <label class="form-label" for="customFile">Dodaj zdjęcie</label>
                                     <input name="image" type="file" class="form-control" id="image" />
                                 </div>
+
+                                Ukryty:
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="hidden" id="inlineRadio1" value="0" checked>
+                                    <label class="form-check-label" for="inlineRadio1">Nie</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="hidden" id="inlineRadio2" value="1" >
+                                    <label class="form-check-label" for="inlineRadio2">Tak</label>
+                                </div>
                                 <div class="alert alert-danger" style="display:none"></div>
                         </div>
                         <div class="modal-footer">
@@ -137,120 +148,16 @@
                 <th>Nazwa</th>
                 <th>Zdjęcie</th>
                 <th>Kategoria</th>
+                <th>Ukryty</th>
                 <th>Akcja</th>
             </tr>
             </thead>
         </table>
 
-{{--        @if ($errors->any())--}}
-{{--            <div class="alert alert-danger">--}}
-{{--                <strong>Whoops!</strong> There were some problems with your input.<br><br>--}}
-{{--                <ul>--}}
-{{--                    @foreach ($errors->all() as $error)--}}
-{{--                        <li>{{ $error }}</li>--}}
-{{--                    @endforeach--}}
-{{--                </ul>--}}
-{{--            </div>--}}
-{{--        @endif--}}
-
-{{--        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">--}}
-{{--            @csrf--}}
-
-{{--            <div class="row">--}}
-{{--                <div class="col-xs-12 col-sm-12 col-md-12">--}}
-{{--                    <div class="form-group">--}}
-{{--                        <strong>Name:</strong>--}}
-{{--                        <input type="text" name="name" class="form-control" placeholder="Name">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xs-12 col-sm-12 col-md-12">--}}
-{{--                    <div class="form-group">--}}
-{{--                        <strong>Detail:</strong>--}}
-{{--                        <textarea class="form-control" style="height:150px" name="description" placeholder="Detail"></textarea>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-
-{{--                <div class="md-form mb-4">--}}
-{{--                    <label data-error="wrong" data-success="right" for="defaultForm-email">Kategoria</label>--}}
-{{--                    <select name="category_id" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">--}}
-{{--                        <option selected>Wybierz kategorię</option>--}}
-{{--                        <option value="1">One</option>--}}
-{{--                        <option value="2">Two</option>--}}
-{{--                        <option value="3">Three</option>--}}
-{{--                    </select>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-xs-12 col-sm-12 col-md-12">--}}
-{{--                    <div class="form-group">--}}
-{{--                        <strong>Image:</strong>--}}
-{{--                        <input type="file" name="image" class="form-control" placeholder="image">--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xs-12 col-sm-12 col-md-12 text-center">--}}
-{{--                    <button type="submit" class="btn btn-primary">Submit</button>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-
-{{--        </form>--}}
     </div>
 @endsection
 
 @section('js')
-{{--<script src="http://code.jquery.com/jquery-3.3.1.min.js"--}}
-{{--        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="--}}
-{{--        crossorigin="anonymous">--}}
-{{--</script>--}}
-{{--<!-- Latest compiled and minified JavaScript -->--}}
-{{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>--}}
-{{--<script>--}}
-{{--    jQuery(document).ready(function(){--}}
-{{--        jQuery('#ajaxSubmit').click(function(e){--}}
-{{--            e.preventDefault();--}}
-{{--            var name = jQuery("#name").val();--}}
-{{--            var category_id = jQuery("#category_id").val();--}}
-{{--            var description = jQuery("#description").val();--}}
-{{--            jQuery.ajaxSetup({--}}
-{{--                headers: {--}}
-{{--                    'X-CSRF-TOKEN': jQuery('meta[name="_token"]').attr('content')--}}
-{{--                }--}}
-{{--            });--}}
-{{--            jQuery.ajax({--}}
-{{--                url: "{{route('products.store')}}",--}}
-{{--                type: "POST",--}}
-{{--                data: {--}}
-{{--                    xD--}}
-{{--                    name: name,--}}
-{{--                    category_id: category_id,--}}
-{{--                    description: description,--}}
-{{--                    // image: jQuery('#image').val(),--}}
-{{--                },--}}
-{{--                dataType: 'json',--}}
-{{--                success: function (data) {--}}
-
-{{--                    $('#companydata').trigger("reset");--}}
-{{--                    $('#modal-id').modal('hide');--}}
-{{--                    Swal.fire({--}}
-{{--                        position: 'top-end',--}}
-{{--                        icon: 'success',--}}
-{{--                        title: 'Success',--}}
-{{--                        showConfirmButton: false,--}}
-{{--                        timer: 1500--}}
-{{--                    })--}}
-{{--                    get_company_data()--}}
-{{--                },--}}
-{{--                error: function (data) {--}}
-{{--                    console.log('Error......');--}}
-{{--                }--}}
-{{--            });--}}
-{{--        });--}}
-{{--    });--}}
-{{--    --}}
-{{--    --}}
-{{--    --}}
-{{--</script>--}}
-
-
 
 {{--<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>--}}
 <script type="text/javascript">
@@ -410,10 +317,42 @@
                 {data: 'image', name: 'image', render: function (data, type, full, meta) {
                         return "<img src=\"\\images\\product\\" + data + "\" height=\"100\"/>";
                     } },
-                {data: 'xyz', name: 'xyz'},
+                {data: 'categoryName', name: 'categories.name_pl'},
+                {data: 'hidden', name: 'hidden', render: function (data){
+                    if(data == 0){
+                        return "Nie";
+                    }
+                    if(data ==1){
+                        return "Tak";
+                    }
+                    }},
                 // {data: 'des', name: 'description'},
                 {data: 'action', name: 'akcja', orderable: false, searchable: false},
-            ]
+            ],
+            language: {
+                "sProcessing":    "Przetwarzanie...",
+                "sLengthMenu":    "Pokaż _MENU_ rekordów",
+                "sZeroRecords":   "Brak pasujących wyników",
+                "sEmptyTable":    "Brak danych w tabeli",
+                "sInfo":          "Wyświetlono od _START_ do _END_ z _TOTAL_ rekordów",
+                "sInfoEmpty":     "Pokazuje  0 do 0 z 0 wpisów",
+                "sInfoFiltered":  "(odfiltrowane z _MAX_ wszystkich wpisów)",
+                "sInfoPostFix":   "",
+                "sSearch":        "Szukaj:",
+                "sUrl":           "",
+                "sInfoThousands":  ",",
+                "sLoadingRecords": "Ładowanie...",
+                "oPaginate": {
+                    "sFirst":    "Pierwszy",
+                    "sLast":    "Ostatni",
+                    "sNext":    "Następny",
+                    "sPrevious": "Poprzedni"
+                },
+                "oAria": {
+                    "sSortAscending":  ": Włącz sortowanie kolumn rosnąco",
+                    "sSortDescending": ":  Włącz sortowanie kolumn malejąco",
+                }
+            }
         });
     });
 

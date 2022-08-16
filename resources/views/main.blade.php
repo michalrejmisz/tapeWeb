@@ -131,7 +131,7 @@
     </div>
 
 
-    <section id="main-page-about-us" class="mb-5">
+    <div id="main-page-about-us" class="mb-5">
         <div style="background-color:white;">
             <div class="container">
                 <div class="row">
@@ -215,7 +215,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <br>
     <br>

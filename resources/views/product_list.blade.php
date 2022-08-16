@@ -18,62 +18,27 @@
                 <div class="py-3 col-xs-12 col-sm-7 col-md-8 col-lg-9 ">
 
                         <div class="row">
-{{--                            @for ($i = 0; $i < 10; $i++)--}}
-{{--                                <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">--}}
-{{--                                    <div class="p-1 card shadow-sm">--}}
-{{--                                                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumb</text></svg>--}}
-{{--                                        <img src="{{asset('images/tape.jpg')}}" height="200px" width="100%" class="p-5">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <p class="card-text">Taśma klejąca o specjalnych właściwościach fizycznych.</p>--}}
-{{--                                            <div class="d-flex justify-content-between align-items-center">--}}
-{{--                                                <div class="btn-group">--}}
-{{--                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm btn-outline-secondary">Zobacz</button>--}}
-{{--                                                    <button type="button" class=" btn btn-sm btn-outline-secondary">Zapytaj o cenę</button>--}}
-{{--                                                </div>--}}
-{{--                                                <small class="text-muted">10 zł</small>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                                <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">--}}
-{{--                                    <div class="p-1 card shadow-sm">--}}
-{{--                                                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumb</text></svg>--}}
-{{--                                        <img src="{{asset('images/logo.png')}}" height="200px" width="100%" class="p-5">--}}
-{{--                                                                    <img src="{{asset('images/logo.png')}}" class="feaurette-image img-fluid mx-auto">--}}
-{{--                                        <div class="card-body">--}}
-{{--                                            <p class="card-text">Taśma klejąca o specjalnych właściwościach fizycznych.</p>--}}
-{{--                                            <div class="d-flex justify-content-between align-items-center">--}}
-{{--                                                <div class="btn-group">--}}
-{{--                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-sm btn-outline-secondary">Zobacz</button>--}}
-{{--                                                    <button type="button" class="btn btn-sm btn-outline-secondary">Zapytaj o cenę</button>--}}
-{{--                                                </div>--}}
-{{--                                                <small class="text-muted">10 zł</small>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            @endfor--}}
-
                             @foreach ($products as $product)
-                                @if((App::getLocale() == 'pl' && isset($product->name_pl)) or (App::getLocale() == 'en' && isset($product->name_en)))
-                                    <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
-                                        <div class="p-1 card shadow-sm">
-                                            <div class="thumbnail">
-                                                <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5">
-                                            </div>
-                                            <div class="card-body">
-                                                <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </p>
-                                                <div class="d-flex justify-content-between align-items-center">
-                                                    <div class="btn-group">
-                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#view-detail-product-{{$product->id}}" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.see")}}</button>
-                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#form-product" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.askforprice")}}</button>
+                                @if($product->hidden == 0)
+                                    @if((App::getLocale() == 'pl' && isset($product->name_pl)) or (App::getLocale() == 'en' && isset($product->name_en)))
+                                        <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
+                                            <div class="p-1 card shadow-sm">
+                                                <div class="thumbnail">
+                                                    <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5">
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </p>
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="btn-group">
+                                                            <button type="button" data-bs-toggle="modal" data-bs-target="#view-detail-product-{{$product->id}}" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.see")}}</button>
+                                                            <button type="button" data-bs-toggle="modal" data-bs-target="#form-product" class="btn btn-sm btn-outline-secondary">{{__("messages.categories.askforprice")}}</button>
+                                                        </div>
+        {{--                                                <small class="text-muted">10 zł</small>--}}
                                                     </div>
-    {{--                                                <small class="text-muted">10 zł</small>--}}
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    @endif
                                 @endif
                             @endforeach
                         </div>
@@ -81,36 +46,38 @@
             </div>>
 
             @foreach ($products as $product)
-                <div class="quickview modal fade" id="view-detail-product-{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header border-0 text-center">
-                                <h3 class="modal-title text-center">{{__("messages.categories.productdescription")}}</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        {{--                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
-        {{--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
-                            </div>
-                            <div class="modal-body ">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="img-single-view m-5">
-                                            <img class="rounded border border-2" src="{{asset('images/product/'.$product->image)}}">
+                @if($product->hidden == 0)
+                    <div class="quickview modal fade" id="view-detail-product-{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header border-0 text-center">
+                                    <h3 class="modal-title text-center">{{__("messages.categories.productdescription")}}</h3>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    {{--                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>--}}
+                                    {{--                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>--}}
+                                </div>
+                                <div class="modal-body ">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="img-single-view m-5">
+                                                <img class="rounded border border-2" src="{{asset('images/product/'.$product->image)}}">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 order-first order-md-last">
+                                            <h1 class="h1 namne_details border-bottom-5 text-center mt-3">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </h1>
+                                            <hr>
+                                            <h5 class="namne_details border-bottom-5">@if(App::getLocale() == 'pl') {{$product->description_pl}} @elseif (App::getLocale() == 'en') {{$product->description_en}} @endif </h5>
                                         </div>
                                     </div>
-
-                                    <div class="col-md-6 order-first order-md-last">
-                                        <h1 class="h1 namne_details border-bottom-5 text-center mt-3">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </h1>
-                                        <hr>
-                                        <h5 class="namne_details border-bottom-5">@if(App::getLocale() == 'pl') {{$product->description_pl}} @elseif (App::getLocale() == 'en') {{$product->description_en}} @endif </h5>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="modal-footer border-0">
-                                <button class="btn btn-primary" data-bs-target="#form-product" data-bs-toggle="modal" data-bs-dismiss="modal">{{__("messages.categories.askforprice")}}</button>
+                                <div class="modal-footer border-0">
+                                    <button class="btn btn-primary" data-bs-target="#form-product" data-bs-toggle="modal" data-bs-dismiss="modal">{{__("messages.categories.askforprice")}}</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                @endif
             @endforeach
 
             <div class="quickview modal fade" id="form-product" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
