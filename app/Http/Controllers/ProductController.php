@@ -6,6 +6,8 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 use Illuminate\Support\Facades\File;
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class ProductController extends Controller
 {
@@ -72,21 +74,18 @@ class ProductController extends Controller
         }
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/product/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-//            $profileImage = date('YmdHis');
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-
-            $imageResize = Image::make($image)->encode('webp', 90);
-            if ($imageResize->width() > 380){
-                $imageResize->resize(380, null, function ($constraint) {
+            $profileImage = date('YmdHis') . ".webp";
+            $imageResize = Image::make($image);
+            $imageResize->encode('webp', 90);
+            if ($imageResize->width() > 720){
+                $imageResize->resize(720, null, function ($constraint) {
                     $constraint->aspectRatio();
                 });
             }
-            $imageResize->save($destinationPath.$profileImage);
+            $path = public_path().'/images/product/';
+            $imageResize->save($path.$profileImage);
         } else {
-            $profileImage = 'no-thumb.png';
+            $profileImage = 'no-thumb.webp';
         }
 
         $product= new Product();
@@ -159,17 +158,23 @@ class ProductController extends Controller
         }
 
         if ($image = $request->file('image')) {
-            $destinationPath = 'images/product/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
+            $profileImage = date('YmdHis') . ".webp";
+            $imageResize = Image::make($image);
+            $imageResize->encode('webp', 90);
+            if ($imageResize->width() > 720){
+                $imageResize->resize(720, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+            $path = public_path().'/images/product/';
+            $imageResize->save($path.$profileImage);
         }
 
         $product= Product::find($id);
 
         if($request->has('image')){
             $image_old = $product->image;
-            if($image != 'no-thumb.png'){
+            if($image != 'no-thumb.webp' or $image != 'no-thumb.jpeg'){
                 if(File::exists(public_path('images/product/'.$image_old))) {
                     File::delete(public_path('images/product/'.$image_old));
                 }
@@ -214,7 +219,7 @@ class ProductController extends Controller
         $image = $product->image;
         $product->delete();
 
-        if($image != 'no-thumb.png'){
+        if($image != 'no-thumb.webp' or $image != 'no-thumb.jpeg'){
             if(File::exists(public_path('images/product/'.$image))) {
                 File::delete(public_path('images/product/'.$image));
             }
