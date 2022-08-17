@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <section class="d-flex min-vh-100 inline-block" id="slogan"  style="background-image: url('{{asset('images/bgshutter1920_2233.webp')}}');">
+    <section class="d-flex min-vh-100 inline-block" id="slogan"  fetchpriority="high" style="background-image: url('{{asset('images/bgshutter1920_2233.webp')}}');">
 
         <div class="content--centered animated animatedFadeInUp fadeInUp">
             <div class="text-center preventOverflowContent">

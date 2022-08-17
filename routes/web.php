@@ -15,35 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('main');
+    return view('wbudowie');
 })->name('main');
 
-//Route::get('/product', function () {
-//    return view('product_list');
-//})->name('product');
-
-
-
+//Route::get('/', function () {
+//    return view('main');
+//})->name('main');
 
 Route::group(['middleware' => 'Language'], function () {
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-    Route::get('/welcome', function () {
-        return view('welcome');
-    })->name('welcome');
-
-
-
     Route::get('/change-language/{lang}', [\App\Http\Controllers\HomeController::class, 'changeLang']);
-
-
 
     Route::get('/products/{id}', [App\Http\Controllers\HomeController::class, 'product_by_category'])->name('products_by_category');
     Route::get('/products', [App\Http\Controllers\HomeController::class, 'products_all'])->name('products_all');
-
-
-
-
 
     //Route::get('contact-us', [ContactController::class, 'index']);
     Route::post('/', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');

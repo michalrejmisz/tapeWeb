@@ -74,8 +74,17 @@ class ProductController extends Controller
         if ($image = $request->file('image')) {
             $destinationPath = 'images/product/';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+//            $profileImage = date('YmdHis');
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
+
+            $imageResize = Image::make($image)->encode('webp', 90);
+            if ($imageResize->width() > 380){
+                $imageResize->resize(380, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+            }
+            $imageResize->save($destinationPath.$profileImage);
         } else {
             $profileImage = 'no-thumb.png';
         }
