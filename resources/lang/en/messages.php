@@ -1,5 +1,9 @@
 <?php
 return [
+//    Meta
+    "meta.description" => "Check out the highest quality packing tapes and printed tapes at affordable prices. In our offer You are sure to find something for yourself.",
+    "meta.title" => "packing tapes and printed tapes",
+
 //    Language
     "choose.language" => "Choose Language: ",
 

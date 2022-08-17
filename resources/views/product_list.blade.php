@@ -24,7 +24,7 @@
                                         <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
                                             <div class="p-1 card shadow-sm">
                                                 <div class="thumbnail">
-                                                    <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5">
+                                                    <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5" alt="@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif(App::getLocale() == 'en') {{$product->name_en}} @endif">
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </p>
@@ -58,7 +58,7 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="img-single-view m-5">
-                                                <img class="rounded border border-2" src="{{asset('images/product/'.$product->image)}}">
+                                                <img class="rounded border border-2" src="{{asset('images/product/'.$product->image)}}" alt="@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}}@endif">
                                             </div>
                                         </div>
 

@@ -27,7 +27,7 @@
                             <div class="card p-1">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                         <div class="flex-column lh-1 imagename"> <span>{{__("messages.packaging")}}</span> </div>
-                                        <div> <img src="{{asset('images/categories/1.webp')}}" height="100" width="100" /> </div>
+                                        <div> <img src="{{asset('images/categories/1.webp')}}" height="100" width="100" alt="{{__("messages.packaging")}}"/> </div>
                                         <a class="d-none" href="{{route('products_by_category', 1)}}"></a>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.printed")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/2.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/2.webp')}}" height="100" width="100" alt="{{__("messages.printed")}}"/> </div>
                                     <a class="d-none" href="{{route('products_by_category', 2)}}"></a>
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.stock")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/3.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/3.webp')}}" height="100" width="100" alt="{{__("messages.stock")}}"/> </div>
                                     <a class="d-none" href="{{route('products_by_category', 3)}}"></a>
                                 </div>
                             </div>
@@ -54,7 +54,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.caution")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/4.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/4.webp')}}" height="100" width="100" alt="{{__("messages.caution")}}"/> </div>
                                     <a class="d-none" href="{{route('products_by_category', 4)}}"></a>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                             <div class="card p-2tr5">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.specialist")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/5.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/5.webp')}}" height="100" width="100" alt="{{__("messages.specialist")}}"/> </div>
                                     <a class="d-none" href="{{route('products_by_category', 5)}}"></a>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.stretchwrap")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/6.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/6.webp')}}" height="100" width="100" alt="{{__("messages.stretchwrap")}}"/> </div>
                                     <a class="d-none" href="{{route('products_by_category', 6)}}"></a>
                                 </div>
                             </div>
@@ -81,7 +81,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.applicators")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" alt="{{__("messages.applicators")}}"/> </div>
                                     <a class="d-none" href="{{route('products_by_category', 7)}}"></a>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.all")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/8.webp')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/8.webp')}}" height="100" width="100" alt="{{__("messages.all")}}"/> </div>
                                     <a class="d-none" href="{{route('products_all')}}"></a>
                                 </div>
                             </div>
@@ -303,7 +303,7 @@
 
                     <div class="col-md-4 d-none d-lg-flex align-items-center justify-content-center p-5">
                         <div class="contact1-pic js-tilt " data-tilt="" style="">
-                            <img src="images/contact.png" alt="IMG">
+                            <img src="images/contact.png" alt="img">
                         </div>
                     </div>
                 </div>

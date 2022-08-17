@@ -1,5 +1,9 @@
 <?php
 return [
+//    Meta
+    "meta.description" => "Sprawdź najwyższej jakości taśmy pakowe oraz taśmy z nadrukiem w przystępnych cenach. W naszej ofercie na pewno znajdziesz coś dla siebie.",
+    "meta.title" => "taśmy pakowe oraz taśmy z nadrukiem ",
+
 //    Language
     "choose.language" => "Wybierz język: ",
 //    Navbar
