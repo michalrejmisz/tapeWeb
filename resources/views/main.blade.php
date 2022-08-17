@@ -2,44 +2,16 @@
 
 
 @section('content')
-    <section class="d-flex min-vh-100 inline-block" id="slogan"  style="background-image: url('{{asset('images/bgshutter1920_2233.jpg')}}');">
-{{--        <div class="min-vh-50 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
-{{--            <h1 class="align-middle"><span>Z nami</span> się rozwiniesz</h1>--}}
-{{--            <h1>Bo <span>jakość</span> ma znaczenie</h1>--}}
-{{--        </div>--}}
-{{--        <div class="min-vh-50 w-50" style="background-color:#04ccfc;"></div>--}}
-{{--        <span class="d-flex justify-content-center">middle</span>--}}
-{{--        <div class="d-flex row align-items-center vh-100">--}}
-{{--            <div class="col-6 bg-danger">--}}
-{{--                LEFT/MIDDLE TEXT--}}
-{{--            </div>--}}
-
-{{--            <div class="col-6 bg-primary">--}}
-{{--                RIGHT/MIDDLE TEXT--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
+    <section class="d-flex min-vh-100 inline-block" id="slogan"  style="background-image: url('{{asset('images/bgshutter1920_2233.webp')}}');">
 
         <div class="content--centered animated animatedFadeInUp fadeInUp">
             <div class="text-center preventOverflowContent">
-
                 <h1 class="title--flex title animated fadeIn" style="color: white;">{{__("messages.tagline1")}}</h1>
                 <h1 class="title--flex" style="color: white;">{{__("messages.tagline2")}}</h1>
-{{--                <p class="content--flex h4--body" style="color: white;">Coffee House authors have events all over the world—find one near you.</p>--}}
-{{--                <a class="btn btn--large btn--clear btn--square uppercase" href="/pages/events" tabindex="0">Find an event</a>--}}
                 <a href="#main-page-products" class="smoothscroll btn btn--stroke text-center">  {{__("messages.seeproducts")}}</a>
-{{--                <div class="d-flex justify-content-center align-items-center">Zobacz produkty</div>--}}
             </div>
         </div>
     </section>
-
-{{--    <div class="d-flex min-vh-100" id="slogan">--}}
-{{--                <div class="min-vh-50 w-50 text-center aligns-items-center d-flex" style="background-color:white;">--}}
-{{--                    <h1 class="align-middle"><span>Z nami</span> się rozwiniesz</h1>--}}
-{{--                    <h1>Bo <span>jakość</span> ma znaczenie</h1>--}}
-{{--                </div>--}}
-{{--                <div class="min-vh-50 w-50" style="background-color:#04ccfc;"></div>--}}
-{{--    </div>--}}
 
 
 
@@ -49,15 +21,13 @@
 
                     <div class="d-flex justify-content-center align-items-center mt-5 heading-section"> <span class="subheading">{{__("messages.ourcategories")}}</span> </div>
                     <div class="d-flex justify-content-center heading-section mt-3"> <span class="text text-center mb-4 h2">{{__("messages.findproduct")}}<br>{{__("messages.productthatfit")}}</span></div>
-{{--                    <div class="d-flex justify-content-center align-items-center mt-5"> <button class="btn btn-dark">NASZE KATEGORIE</button></div>--}}
-{{--                    <div class="d-flex justify-content-center mt-3"> <span class="text text-center" style="color:black">Znajdź produkt<br>Dopasowany do Twoich potrzeb</span></div>--}}
 
                     <div class="row mt-2 g-4">
                         <div class="col-md-3">
                             <div class="card p-1">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                         <div class="flex-column lh-1 imagename"> <span>{{__("messages.packaging")}}</span> </div>
-                                        <div> <img src="{{asset('images/categories/1.jpg')}}" height="100" width="100" /> </div>
+                                        <div> <img src="{{asset('images/categories/1.webp')}}" height="100" width="100" /> </div>
                                         <a class="d-none" href="{{route('products_by_category', 1)}}"></a>
                                 </div>
                             </div>
@@ -66,7 +36,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.printed")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/2.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/2.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_by_category', 2)}}"></a>
                                 </div>
                             </div>
@@ -75,7 +45,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.stock")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/3.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/3.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_by_category', 3)}}"></a>
                                 </div>
                             </div>
@@ -84,7 +54,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.caution")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/4.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/4.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_by_category', 4)}}"></a>
                                 </div>
                             </div>
@@ -93,7 +63,7 @@
                             <div class="card p-2tr5">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.specialist")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/5.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/5.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_by_category', 5)}}"></a>
                                 </div>
                             </div>
@@ -102,7 +72,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.stretchwrap")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/6.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/6.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_by_category', 6)}}"></a>
                                 </div>
                             </div>
@@ -111,7 +81,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.applicators")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/7.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_by_category', 7)}}"></a>
                                 </div>
                             </div>
@@ -120,7 +90,7 @@
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.all")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/8.jpg')}}" height="100" width="100" /> </div>
+                                    <div> <img src="{{asset('images/categories/8.webp')}}" height="100" width="100" /> </div>
                                     <a class="d-none" href="{{route('products_all')}}"></a>
                                 </div>
                             </div>
@@ -222,19 +192,11 @@
 
     <section id="main-page-contact-form" class="mt-5" style="padding-top:150px;">
         <div class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;">
-{{--        <div class="py-5 test min-vh-100" style="background-color:#0a53be;height: 100%;">--}}
-            {{--    <div class="b-example-divider"></div>--}}
-            {{--        @yield('content')--}}
-
-
-
             <div class="container">
-
                 <div class="row justify-content-center mb-5 pb-3">
                     <div class="col-md-7 heading-section text-center">
                         <span class="subheading">{{__("messages.contactform.contact")}}</span>
                         <span class="mb-4 h2">{{__("messages.contactform.contactus")}}</span>
-{{--                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>--}}
                     </div>
                 </div>
 
@@ -327,9 +289,6 @@
                                     <label class="form-check-label" for="flexCheckDefault">
                                         {{__("messages.rodo.checkbox")}}
                                         <a href="#my-modal" data-bs-target="#privacypolicy"data-bs-toggle="modal" style="color:black;"><u>{{__("messages.rodo.seedetails")}}</u></a>.
-                                        {{--                                            @if ($errors->has('rodo'))--}}
-                                        {{--                                                <span class="text-danger">{{ $errors->first('rodo') }}</span>--}}
-                                        {{--                                            @endif--}}
                                     </label>
                                 </div>
                             </div>
@@ -374,28 +333,7 @@
 @endsection
 
 @section('javascript')
-{{--        $(document).ready(function () {--}}
-{{--            $(window).scroll(function (e){--}}
-{{--                let windowTop = $(this).scrollTop();--}}
-{{--                $('.nav a').each(function (event) {--}}
-{{--                    console.log(windowTop)--}}
-{{--                    if (windowTop >= $($(this).attr('href')).offset().top - 100) {--}}
-{{--                     // Remove 'active' from previously highlighted menu items--}}
-{{--                        $('.nav .active').removeClass('active');--}}
-{{--                        // Highlight the current menu item by adding 'active' class--}}
-{{--                        $(this).addClass('active');--}}
-{{--                     }--}}
-{{--                });--}}
-{{--            });--}}
-{{--        });--}}
-
-
         const scrollHandler = () => {
-        console.log("scroll handler")
-        console.log(document.querySelectorAll('.nav-link')[0])
-        console.log(document.querySelectorAll('.nav-link')[1])
-        console.log(document.querySelectorAll('.nav-link')[2])
-        console.log(document.querySelectorAll('.nav-link')[0].classList)
         let menu = document.querySelector('#navbar')
 
         let A = document.getElementById('slogan')
@@ -422,21 +360,17 @@
         document.querySelectorAll('.nav-link')[3].classList.remove('active')
 
         if(min === distance_A){
-            console.log("IN A")
             document.querySelectorAll('.nav-link')[0].classList.add('active')
 
         }
         if(min === distance_B){
-            console.log("IN B")
             document.querySelectorAll('.nav-link')[1].classList.add('active')
         }
         if(min === distance_C){
-            console.log("IN C")
             document.querySelectorAll('.nav-link')[2].classList.add('active')
         }
 
         if(min === distance_D){
-            console.log("IN D")
             document.querySelectorAll('.nav-link')[3].classList.add('active')
         }
 
@@ -532,62 +466,5 @@ $(".clickableBox").click(function() {
         $('.js-tilt').tilt({
         scale: 1.1
         });
-
-{{--        ScrollReveal().reveal('#main-page-cards');--}}
-{{--        function reveal() {--}}
-{{--        var reveals = document.querySelectorAll(".reveal");--}}
-
-{{--        for (var i = 0; i < reveals.length; i++) {--}}
-{{--        var windowHeight = window.innerHeight;--}}
-{{--        var elementTop = reveals[i].getBoundingClientRect().top;--}}
-{{--        var elementVisible = 150;--}}
-
-{{--        if (elementTop < windowHeight - elementVisible) {--}}
-{{--        reveals[i].classList.add("active");--}}
-{{--        } else {--}}
-{{--        reveals[i].classList.remove("active");--}}
-{{--        }--}}
-{{--        }--}}
-{{--        }--}}
-
-{{--        window.addEventListener("scroll", reveal);--}}
-
-{{--        var waypoint = new Waypoint({--}}
-{{--            element: document.getElementById('main-page-cards'),--}}
-{{--            handler: function(direction) {--}}
-{{--                console.log('Scrolled to waypoint!')--}}
-{{--            }, {--}}
-{{--            triggerOnce: true,--}}
-{{--            offset: '75%'--}}
-{{--        }})--}}
-
-{{--        var waypoint = new Waypoint({--}}
-{{--        element: document.getElementById('main-page-cards'),--}}
-{{--        handler: function(direction) {--}}
-{{--        console.log('Scrolled to waypoint!')--}}
-{{--        },--}}
-{{--        offset: '50%',--}}
-{{--        triggerOnce: true--}}
-{{--        })--}}
-
-
-{{--        $(".testUp").waypoint(function(){--}}
-{{--            $(this[0,'element']).addClass("animated");--}}
-{{--            $(this[0,'element']).addClass("animatedFadeInUp");--}}
-{{--            $(this[0,'element']).addClass("fadeInUp");--}}
-{{--        }, {--}}
-{{--        triggerOnce: true,--}}
-{{--        offset: '75%'--}}
-{{--        });--}}
-
-{{--        var yourWaypointInstance = new Waypoint({--}}
-{{--        element: document.getElementsByClassName('testUp'),--}}
-{{--        handler: function(direction) {--}}
-{{--        //do something--}}
-{{--        //then destroy:--}}
-{{--        yourWaypointInstance.destroy()--}}
-{{--        },--}}
-{{--        offset: 'bottom-in-view' //options--}}
-{{--        })--}}
 @endsection
 

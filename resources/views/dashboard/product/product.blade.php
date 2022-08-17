@@ -212,9 +212,7 @@
     // Update product
     $(document).ready(function () {
         $('#form-update-45').submit(function(e) {
-            console.log("Test update")
             var id = $('#id').val();
-            console.log(id);
             var url = '{{ route("product.update", ":id") }}';
             e.preventDefault();
             let formData = new FormData(this);
@@ -271,7 +269,6 @@
         let description_pl = $('#description_pl').val();
         let description_en = $('#description_en').val();
         let image = $('#image').val();
-        console.log(formData)
 
         $.ajax({
             url: "{{route('products.store')}}",
