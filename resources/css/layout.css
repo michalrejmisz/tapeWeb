@@ -69,6 +69,13 @@ table, th, td {
     }
 }
 
+@media only screen and (max-width: 370px) {
+    #navbar .nav .nav-link{
+        margin-left: 0px;
+        font-size: 12px;
+    }
+}
+
 #navbar .nav .nav-item .active{
     background: none;
     border-bottom: 2px solid #04ccfc;
