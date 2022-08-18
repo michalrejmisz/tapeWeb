@@ -752,6 +752,7 @@ main-page-contact-form .contact-form{
     line-height: 1.8;
     font-weight: 500;
     color: #999;
+    scroll-margin-top: 140px;
 }
 
 #main-page-about-us h2{
