@@ -60,7 +60,7 @@ class ProductController extends Controller
             'name_pl' => 'required',
             'category_id' => 'required',
 //            'description_pl' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ],
         [
             'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
@@ -144,7 +144,7 @@ class ProductController extends Controller
             'name_pl' => 'required',
             'category_id' => 'required',
 //            'description_pl' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ],
             [
                 'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
