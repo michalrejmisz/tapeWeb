@@ -60,7 +60,7 @@ class ProductController extends Controller
             'name_pl' => 'required',
             'category_id' => 'required',
 //            'description_pl' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
         ],
         [
             'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
@@ -144,11 +144,12 @@ class ProductController extends Controller
             'name_pl' => 'required',
             'category_id' => 'required',
 //            'description_pl' => 'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
         ],
             [
                 'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
                 'category_id.required' => "Wybierz kategorię",
+                'image.mimes' => "Format pliku inny niż jpeg, png, gif, svg ,webp"
             ]
         );
 

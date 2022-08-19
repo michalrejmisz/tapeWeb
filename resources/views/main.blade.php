@@ -348,8 +348,8 @@
         let pos_D = D.offsetTop + D.offsetHeight
 
         let distance_A = pos_A - pos_menu
-        let distance_B = pos_B - pos_menu
-        let distance_C = pos_C - pos_menu + 200
+        let distance_B = pos_B - pos_menu - 140
+        let distance_C = pos_C - pos_menu + 140
         let distance_D = pos_D - pos_menu
 
         let min = Math.min(...[distance_A, distance_B, distance_C, distance_D].filter(num => num > 0))

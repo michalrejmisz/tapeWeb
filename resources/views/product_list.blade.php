@@ -23,8 +23,9 @@
                                     @if((App::getLocale() == 'pl' && isset($product->name_pl)) or (App::getLocale() == 'en' && isset($product->name_en)))
                                         <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
                                             <div class="p-1 card shadow-sm">
-                                                <div class="thumbnail">
-                                                    <img src="{{asset('images/product/'.$product->image)}}" height="200px" width="100%" class="p-5" alt="@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif(App::getLocale() == 'en') {{$product->name_en}} @endif">
+                                                <div class="thumbnail text-center">
+                                                    <img src="{{asset('images/product/'.$product->image)}}" class="p-1" alt="@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif(App::getLocale() == 'en') {{$product->name_en}} @endif">
+{{--                                                    height="200px" width="100%"--}}
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="card-text align-text-bottom" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;line-clamp: 2;">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </p>
