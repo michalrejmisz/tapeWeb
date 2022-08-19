@@ -4,7 +4,7 @@
     <div class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;">
         <div class="container">
             <div class="row">
-                <div id="left-column" class="py-3 col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                <div id="left-column" class="py-3 col-xs-12 col-sm-4 col-md-4 col-lg-3">
                     <div class="category-top-menu">
                         <div class="pt-3 px-3 pb-1 bg-info"><p class="text-uppercase h6 pb-3 mb-2">{{__("messages.categories")}}</p></div>
                             <ul class="category-sub-menu bg-white ps-4 pe-4 mx-1 py-2">
@@ -15,13 +15,13 @@
                     </div>
 
                 </div>
-                <div class="py-3 col-xs-12 col-sm-7 col-md-8 col-lg-9 ">
+                <div class="py-3 col-xs-12 col-sm-8 col-md-8 col-lg-9 ">
 
                         <div class="row">
                             @foreach ($products as $product)
                                 @if($product->hidden == 0)
                                     @if((App::getLocale() == 'pl' && isset($product->name_pl)) or (App::getLocale() == 'en' && isset($product->name_en)))
-                                        <div class="p-2 col-sm-12 col-md-6 col-lg-6 col-xl-4 zoomIn col-xs-12">
+                                        <div class="p-2 col-sm-12 col-md-12 col-lg-6 col-xxl-4 zoomIn col-xs-12">
                                             <div class="p-1 card shadow-sm">
                                                 <div class="thumbnail text-center">
                                                     <img src="{{asset('images/product/'.$product->image)}}" class="p-1" alt="@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif(App::getLocale() == 'en') {{$product->name_en}} @endif">
