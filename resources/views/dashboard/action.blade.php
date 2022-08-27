@@ -2,6 +2,7 @@
 {{--    Edytuj--}}
 {{--</a>--}}
 {{--Edytuj--}}
+
 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProduct-{{$id}}">
     Edytuj
 </button>
@@ -37,8 +38,6 @@
 </div>
 
 {{-- Edytuj--}}
-<form method="post" action="{{route('product.update', $id)}}" enctype="multipart/form-data" id="form-update-{{$id}}">
-    @csrf
     <div class="modal fade" id="addProduct-{{$id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -47,6 +46,9 @@
                     <h4 class="modal-title" id="exampleModalLabel">Edytuj produkt</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
+                <form method="post" action="{{route('product.update', $id)}}" enctype="multipart/form-data" id="form-update-{{$id}}">
+                    @csrf
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-3 align-middle">
@@ -72,13 +74,13 @@
                                 <div class="md-form mb-4 me-1 flex-fill">
                                     <i class="fas fa-lock prefix grey-text"></i>
                                     <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu</label>
-                                    <textarea name="description_pl" id="description_pl" class="form-control validate" rows="5" value="{{$description_pl}}">{{$description_pl}}</textarea>
+                                    <textarea name="description_pl" id="description_pl" class="form-control ckeditor validate" rows="5" value="{{$description_pl}}">{{$description_pl}}</textarea>
                                 </div>
 
                                 <div class="md-form mb-4 flex-fill">
                                     <i class="fas fa-lock prefix grey-text"></i>
                                     <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu(ang)</label>
-                                    <textarea name="description_en" id="description_en" class="form-control validate" rows="5" value="{{$description_en}}">{{$description_en}}</textarea>
+                                    <textarea name="description_en" id="description_en" class="form-control ckeditor validate" rows="5" value="{{$description_en}}">{{$description_en}}</textarea>
                                 </div>
                             </div>
 
@@ -121,8 +123,20 @@
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
                     <button id="ajaxSubmit" class="btn btn-primary">Aktualizuj</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
-</form>
+
+
+
+<script src="//cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>
+{{--<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>--}}
+<script type="text/javascript">
+    // alert("test2")
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
+</script>
+
 

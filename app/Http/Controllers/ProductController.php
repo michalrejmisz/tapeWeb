@@ -106,8 +106,9 @@ class ProductController extends Controller
 
 //        return response()->json(['success'=>'Data is successfully added']);
 //        return response()->json('Image uploaded successfully');
-        return redirect()->back()->with('success', 'your message,here');
+//        return redirect()->back()->with('success', 'your message,here');
 //        return response()->json($product);
+        return response()->json(['success'=>'Data is successfully added']);
     }
 
     /**
@@ -127,9 +128,14 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $test = $product->id;
+        return response()->json($product);
+//        return response()->json([
+//            "message" => $test
+//        ]);
     }
 
     /**
@@ -227,6 +233,7 @@ class ProductController extends Controller
         }
 
 //        return Response()->json($product);
-        return redirect()->back()->with('success', 'your message,here');
+//        return redirect()->back()->with('success', 'your message,here');
+        return response()->json(['success'=>'Data is successfully remove']);
     }
 }

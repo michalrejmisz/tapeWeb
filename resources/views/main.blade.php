@@ -23,7 +23,7 @@
                     <div class="d-flex justify-content-center heading-section mt-3"> <span class="text text-center mb-4 h2">{{__("messages.findproduct")}}<br>{{__("messages.productthatfit")}}</span></div>
 
                     <div class="row mt-2 g-4">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card p-1">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                         <div class="flex-column lh-1 imagename"> <span>{{__("messages.packaging")}}</span> </div>
@@ -32,7 +32,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.printed")}}</span> </div>
@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.stock")}}</span> </div>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.caution")}}</span> </div>
@@ -59,8 +59,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card p-2tr5">
+                        <div class="col-md-4">
+                            <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.specialist")}}</span> </div>
                                     <div> <img src="{{asset('images/categories/5.webp')}}" height="100" width="100" alt="{{__("messages.specialist")}}"/> </div>
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
                                     <div class="flex-column lh-1 imagename"> <span>{{__("messages.stretchwrap")}}</span> </div>
@@ -77,24 +77,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card p-2">
-                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
-                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.applicators")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" alt="{{__("messages.applicators")}}"/> </div>
-                                    <a class="d-none" href="{{route('products_by_category', 7)}}"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card p-2">
-                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
-                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.all")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/8.webp')}}" height="100" width="100" alt="{{__("messages.all")}}"/> </div>
-                                    <a class="d-none" href="{{route('products_all')}}"></a>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="col-md-3">--}}
+{{--                            <div class="card p-2">--}}
+{{--                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">--}}
+{{--                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.applicators")}}</span> </div>--}}
+{{--                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" alt="{{__("messages.applicators")}}"/> </div>--}}
+{{--                                    <a class="d-none" href="{{route('products_by_category', 7)}}"></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-md-3">--}}
+{{--                            <div class="card p-2">--}}
+{{--                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">--}}
+{{--                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.all")}}</span> </div>--}}
+{{--                                    <div> <img src="{{asset('images/categories/8.webp')}}" height="100" width="100" alt="{{__("messages.all")}}"/> </div>--}}
+{{--                                    <a class="d-none" href="{{route('products_all')}}"></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
         </div>

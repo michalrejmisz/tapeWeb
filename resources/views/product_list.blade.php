@@ -66,7 +66,7 @@
                                         <div class="col-md-6 order-first order-md-last">
                                             <h1 class="h1 namne_details border-bottom-5 text-center mt-3">@if(App::getLocale() == 'pl') {{$product->name_pl}} @elseif (App::getLocale() == 'en') {{$product->name_en}} @endif </h1>
                                             <hr>
-                                            <div class="h6 namne_details border-bottom-5">@if(App::getLocale() == 'pl') {{$product->description_pl}} @elseif (App::getLocale() == 'en') {{$product->description_en}} @endif </div>
+                                            <div class="h6 namne_details border-bottom-5">@if(App::getLocale() == 'pl') {!!$product->description_pl!!} @elseif (App::getLocale() == 'en') {!!$product->description_en!!} @endif </div>
                                         </div>
                                     </div>
                                 </div>

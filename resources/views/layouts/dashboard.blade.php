@@ -11,9 +11,10 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+{{--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>--}}
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css"/>
 </head>
 <body class="sb-nav-fixed">
@@ -73,7 +74,12 @@
 
 <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-
+{{--<script src="//cdn.ckeditor.com/4.19.1/basic/ckeditor.js"></script>--}}
+{{--<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>--}}
+{{--<script type="text/javascript">--}}
+{{--    $(document).ready(function () {--}}
+{{--        $('.ckeditor').ckeditor();--}}
+{{--    });--}}
 @yield('js')
 </body>
 </html>

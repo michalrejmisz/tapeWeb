@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('wbudowie');
+    return view('main');
 })->name('main');
 
 //Route::get('/', function () {
@@ -46,6 +46,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/dashboard/product', [\App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
     Route::post('/dashboard/product/delete/{id}', [\App\Http\Controllers\ProductController::class, 'destroy'])->name('product.delete');
     Route::post('/dashboard/product/update/{id}', [\App\Http\Controllers\ProductController::class, 'update'])->name('product.update');
+    Route::post('/dashboard/product/edit/{id}', [\App\Http\Controllers\ProductController::class, 'edit'])->name('product.edit');
     Route::get('/dashboard/product', [\App\Http\Controllers\ProductController::class, 'index'])->name('products.index');
 });
 
