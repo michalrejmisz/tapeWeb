@@ -5,7 +5,7 @@
 {{--        Form Add product  --}}
 
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addProduct2">
+        <button type="button" class="add-product btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addProduct2">
             Dodaj produkt
         </button>
 
@@ -76,13 +76,13 @@
                                     <div class="md-form mb-4 me-1 flex-fill">
                                         <i class="fas fa-lock prefix grey-text"></i>
                                         <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu</label>
-                                        <textarea name="description_pl" id="description_pl" class="form-control ckeditor validate" rows="5"></textarea>
+                                        <textarea name="description_pl_add" id="description_pl_add" class="form-control ckeditor validate" rows="5"></textarea>
                                     </div>
 
                                     <div class="md-form mb-4 flex-fill">
                                         <i class="fas fa-lock prefix grey-text"></i>
                                         <label data-error="wrong" data-success="right" for="defaultForm-pass">Opis produktu(ang)</label>
-                                        <textarea name="description_en" id="description_en" class="form-control ckeditor validate" rows="5"></textarea>
+                                        <textarea name="description_en_add" id="description_en_add" class="form-control ckeditor validate" rows="5"></textarea>
                                     </div>
                                 </div>
 
@@ -337,9 +337,18 @@
         });
     });
     // Add Product
+    // $("body").on("click", ".add-product", function(event) {
+    //     $("#ajax-form2").trigger('reset');
+    //     CKEDITOR.instances['description_pl'].setData('');
+    //     CKEDITOR.instances['description_en'].setData('');
+    // });
+
+
     $('#ajax-form2').submit(function(e) {
         e.preventDefault();
         let formData = new FormData(this);
+        formData.append('description_en_add', CKEDITOR.instances['description_en_add'].getData())
+        formData.append('description_pl_add', CKEDITOR.instances['description_pl_add'].getData())
         $('#file-input-error').text('');
         $.ajax({
             type:'POST',
@@ -354,7 +363,6 @@
                 if(result.errors)
                 {
                     jQuery('.alert-danger').html('');
-                    console.log(result.errors)
                     jQuery.each(result.errors, function(key, value){
                         jQuery('.alert-danger').show();
                         jQuery('.alert-danger').append('<li>'+value+'</li>');
@@ -362,12 +370,18 @@
                 }
                 else
                 {
-                    // var oTable = $('#table').dataTable();
-                    // oTable.fnDraw(false);
+                    var oTable = $('#table').dataTable();
+                    oTable.fnDraw(false);
                     jQuery('.alert-danger').hide();
                     $('#open').hide();
                     $('#addProduct2').modal('hide');
                     $("#ajax-form2").trigger('reset');
+                    $('#ajax-form2 #description_pl').val('');
+                    $('#ajax-form2 #description_pl').text('');
+                    $('#ajax-form2 #description_pl').val('');
+                    $('#ajax-form2 #description_pl').text('');
+                    CKEDITOR.instances['description_pl_add'].setData('');
+                    CKEDITOR.instances['description_en_add'].setData('');
                     $(function () {
                         $('#productAdded').modal('show');
                         setTimeout(function () {
@@ -526,7 +540,6 @@
                     if(result.errors)
                     {
                         jQuery('.alert-danger').html('');
-                        console.log(result.errors)
                         jQuery.each(result.errors, function(key, value){
                             jQuery('.alert-danger').show();
                             jQuery('.alert-danger').append('<li>'+value+'</li>');

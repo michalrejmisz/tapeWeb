@@ -59,12 +59,13 @@ class ProductController extends Controller
         $validator = \Validator::make($request->all(), [
             'name_pl' => 'required',
             'category_id' => 'required',
-//            'description_pl' => 'required',
+            'description_pl_add' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp',
         ],
         [
             'name_pl.required' => "Wymagana jest nazwa produktu(w języku Polskim)",
             'category_id.required' => "Wybierz kategorię",
+            'description_pl_add.required' => "Wymagany jest opis produktu(w języku Polskim)",
         ]
         );
 
@@ -94,11 +95,11 @@ class ProductController extends Controller
         if($request->has('name_en')){
             $product->name_en=$request->get('name_en');
         }
-        if($request->has('description_pl')){
-            $product->description_pl=$request->get('description_pl');
+        if($request->has('description_pl_add')){
+            $product->description_pl=$request->get('description_pl_add');
         }
-        if($request->has('description_en')){
-            $product->description_en=$request->get('description_en');
+        if($request->has('description_en_add')){
+            $product->description_en=$request->get('description_en_add');
         }
         $product->hidden=$request->get('hidden');
         $product->image=$profileImage;
