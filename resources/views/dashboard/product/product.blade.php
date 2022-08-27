@@ -468,8 +468,8 @@
                     $('#editProduct #name_en').val(response.name_en);
                     $('#editProduct #description_pl').val(response.description_pl);
                     $('#editProduct #description_pl').text(response.description_pl);
-                    $('#editProduct #description_pl').val(response.description_en);
-                    $('#editProduct #description_pl').text(response.description_en);
+                    $('#editProduct #description_en').val(response.description_en);
+                    $('#editProduct #description_en').text(response.description_en);
                     $('#editProduct #category_id').val(response.category_id);
                     CKEDITOR.instances['description_pl'].setData(response.description_pl);
                     CKEDITOR.instances['description_en'].setData(response.description_en);
