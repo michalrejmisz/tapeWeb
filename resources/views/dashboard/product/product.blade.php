@@ -522,6 +522,8 @@
     $(document).ready(function () {
         $('#form-update2').submit(function(e) {
             let formData = new FormData(this);
+            formData.append('description_en', CKEDITOR.instances['description_en'].getData())
+            formData.append('description_pl', CKEDITOR.instances['description_pl'].getData())
             var id = formData.get('id_prod')
             var url = '{{ route("product.update", ":id") }}';
             url = url.replace(':id', id);
