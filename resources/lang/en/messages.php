@@ -39,7 +39,7 @@ return [
     "packaging" => "Packaging Tape",
     "printed" => "Printed Tape",
     "stock" => "Stock Tape",
-    "caution" => "Caution Tape",
+    "caution" => "Stock Tape and Caution Tape",
     "specialist" => "Specialist Tape",
     "stretchwrap" => "Stretch Wrap",
     "applicators" => "Applicators",

@@ -41,15 +41,15 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card p-2">
-                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
-                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.stock")}}</span> </div>
-                                    <div> <img src="{{asset('images/categories/3.webp')}}" height="100" width="100" alt="{{__("messages.stock")}}"/> </div>
-                                    <a class="d-none" href="{{route('products_by_category', 3)}}"></a>
-                                </div>
-                            </div>
-                        </div>
+{{--                        <div class="col-md-4">--}}
+{{--                            <div class="card p-2">--}}
+{{--                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">--}}
+{{--                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.stock")}}</span> </div>--}}
+{{--                                    <div> <img src="{{asset('images/categories/3.webp')}}" height="100" width="100" alt="{{__("messages.stock")}}"/> </div>--}}
+{{--                                    <a class="d-none" href="{{route('products_by_category', 3)}}"></a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="col-md-4">
                             <div class="card p-2">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
@@ -77,15 +77,15 @@
                                 </div>
                             </div>
                         </div>
-{{--                        <div class="col-md-3">--}}
-{{--                            <div class="card p-2">--}}
-{{--                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">--}}
-{{--                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.applicators")}}</span> </div>--}}
-{{--                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" alt="{{__("messages.applicators")}}"/> </div>--}}
-{{--                                    <a class="d-none" href="{{route('products_by_category', 7)}}"></a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        <div class="col-md-4">
+                            <div class="card p-2">
+                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
+                                    <div class="flex-column lh-1 imagename"> <span>{{__("messages.applicators")}}</span> </div>
+                                    <div> <img src="{{asset('images/categories/7.webp')}}" height="100" width="100" alt="{{__("messages.applicators")}}"/> </div>
+                                    <a class="d-none" href="{{route('products_by_category', 7)}}"></a>
+                                </div>
+                            </div>
+                        </div>
 {{--                        <div class="col-md-3">--}}
 {{--                            <div class="card p-2">--}}
 {{--                                <div class="d-flex justify-content-between align-items-center p-2 clickableBox">--}}

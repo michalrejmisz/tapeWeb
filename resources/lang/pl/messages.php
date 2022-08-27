@@ -36,7 +36,7 @@ return [
     "packaging" => "Taśma Pakowa",
     "printed" => "Taśma z Nadrukiem",
     "stock" => "Taśma Magazynowa",
-    "caution" => "Taśma Ostrzegawcza",
+    "caution" => "Taśma magazynowe i ostrzegawcze",
     "specialist" => "Taśma Specjalistyczna",
     "stretchwrap" => "Folia Stretch",
     "applicators" => "Aplikatory",
