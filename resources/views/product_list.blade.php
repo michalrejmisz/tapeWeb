@@ -9,7 +9,7 @@
                         <div class="pt-3 px-3 pb-1 bg-info"><p class="text-uppercase h6 pb-3 mb-2">{{__("messages.categories")}}</p></div>
                             <ul class="category-sub-menu bg-white ps-4 pe-4 mx-1 py-2">
                                 @foreach ($categories as $category)
-                                    <li><a href="{{route('products_by_category', $category->id)}}" @if( request()->route('id') == $category->id ) class="active" @endif">@if(App::getLocale() == 'pl') {{$category->name_pl}} @elseif (App::getLocale() == 'en') {{$category->name_en}} @endif</a></li>
+                                    <li class="py-2"><a href="{{route('products_by_category', $category->id)}}" @if( request()->route('id') == $category->id ) class="active" @endif">@if(App::getLocale() == 'pl') {{$category->name_pl}} @elseif (App::getLocale() == 'en') {{$category->name_en}} @endif</a></li>
                                 @endforeach
                             </ul>
                     </div>
