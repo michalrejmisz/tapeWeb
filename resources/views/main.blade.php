@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <section class="d-flex min-vh-100 inline-block" id="slogan"  fetchpriority="high" style="background-image: url('{{asset('images/bgshutter1920_2233.webp')}}');">
+    <section class="d-flex min-vh-100 inline-block" id="slogan"  fetchpriority="high" style="background-color: #04ccfc; background-image: url('{{asset('images/bgshutter1920_2233.webp')}}');">
 
         <div class="content--centered animated animatedFadeInUp fadeInUp">
             <div class="text-center preventOverflowContent">
@@ -376,10 +376,10 @@
 
         }
 
-        window.addEventListener('scroll', scrollHandler)
+        window.addEventListener('scroll', scrollHandler);
 
 
-$(".clickableBox").click(function() {
+        $(".clickableBox").click(function() {
             window.location = $(this).find("a").attr("href");
             return false;
         });
@@ -461,7 +461,7 @@ $(".clickableBox").click(function() {
         });
         }
         })
-        }
+        };
 
         $('.js-tilt').tilt({
         scale: 1.1

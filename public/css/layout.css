@@ -837,6 +837,18 @@ main-page-contact-form .contact-form{
     color: white;
 }
 
+@media (max-width: 576px) {
+    #slogan h1{
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 577px){
+    #slogan h1{
+        font-size: 50px;
+    }
+}
+
 /* Animation */
 
 
