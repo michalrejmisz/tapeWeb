@@ -2,7 +2,10 @@
 return [
 //    Meta
     "meta.description" => "Sprawdź najwyższej jakości taśmy pakowe oraz taśmy z nadrukiem w przystępnych cenach. W naszej ofercie na pewno znajdziesz coś dla siebie.",
-    "meta.title" => "taśmy pakowe oraz taśmy z nadrukiem ",
+    "meta.title" => "Taśmy pakowe oraz Taśmy z nadrukiem ",
+    "meta.products.title" => " - Dostępne produkty - wTapes największy wybór taśm o różnym zastosowaniu.",
+    "meta.products.description.1" => " sprawdź na wTapes i zamów. Duży wybór ",
+    "meta.products.description.2" => " oraz inne taśmy znajdziesz na naszej stronie.",
 
 //    Language
     "choose.language" => "Wybierz język: ",

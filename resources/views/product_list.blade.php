@@ -1,5 +1,21 @@
 @extends('layouts.layout')
 
+@if(App::getLocale() == 'pl')
+@section('meta-title')
+{{$category->name_pl}} {{__("messages.meta.products.title")}}
+@endsection
+@section('meta-description')
+{{$category->name_pl}}{{__("messages.meta.products.description.1")}}{{$category->name_pl}}{{__("messages.meta.products.description.2")}}
+@endsection
+@elseif (App::getLocale() == 'en')
+@section('meta-title')
+{{$category->name_en}} {{__("messages.meta.products.title")}}
+@endsection
+@section('meta-description')
+{{$category->name_en}}{{__("messages.meta.products.description.1")}}{{$category->name_en}}{{__("messages.meta.products.description.2")}}
+@endsection
+@endif
+
 @section('content')
     <div class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;">
         <div class="container">
@@ -267,3 +283,4 @@
 
 
 @endsection
+

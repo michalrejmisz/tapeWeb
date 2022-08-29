@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App;
 
@@ -38,8 +39,10 @@ class HomeController extends Controller
     }
 
     public function product_by_category($id){
+        $category = Category::find($id);
         $products=Product::where('category_id', $id)->get();
-        return view('product_list')->with('products', $products);
+//        return view('product_list')->with('products', $products);
+        return view('product_list', compact(['products', 'category']));
     }
 
     /**
