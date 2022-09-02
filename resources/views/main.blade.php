@@ -17,12 +17,12 @@
 
     <div id="main-page-products" class="py-5 test min-vh-100" style="background-color:#e0e3e3;height: 100%;">
         <div class="container">
-            <div id="main-page-cards" class="scrollFade">
+            <div id="main-page-cards" class="">
 
                     <div class="d-flex justify-content-center align-items-center mt-5 heading-section"> <span class="subheading">{{__("messages.ourcategories")}}</span> </div>
                     <div class="d-flex justify-content-center heading-section mt-3"> <span class="text text-center mb-4 h2">{{__("messages.findproduct")}}<br>{{__("messages.productthatfit")}}</span></div>
 
-                    <div class="row mt-2 g-4">
+                    <div class="row mt-2 g-4 u-fade-type-down js-scroll-trigger">
                         <div class="col-lg-4 col-md-6">
                             <div class="card p-1">
                                 <div class="d-flex justify-content-between align-items-center p-2 clickableBox">
@@ -101,7 +101,7 @@
     </div>
 
 
-    <div id="main-page-about-us" class="mb-5">
+    <div id="main-page-about-us" class="mb-5 u-fade-type-left js-scroll-trigger">
         <div style="background-color:white;">
             <div class="container">
                 <div class="row">
@@ -115,7 +115,8 @@
                     </div>
 
                     <div class="col-md-9 p-5 " style="min-height:650px;">
-                        <div class="tab-content ps-md-5 my-4 animated animatedFadeInUp fadeInUp" id="nav-tabContent">
+                        <div class="tab-content ps-md-5 my-4" id="nav-tabContent">
+{{--                        <div class="tab-content ps-md-5 my-4 animated animatedFadeInUp fadeInUp" id="nav-tabContent">--}}
                             <span class="icon mb-3 d-block flaticon-ideas"></span>
                             <div class="tab-pane fade show active" id="about-us" role="tabpanel" aria-labelledby="about-us">
                                 <div class="p-2 ms-3" style="color:#04ccfc;">
@@ -201,7 +202,7 @@
                 </div>
 
                 <div class="row d-flex contact-info mb-5 gy-4">
-                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
+                    <div class="col-md-6 col-lg-3 d-flex u-fade-type-down js-scroll-trigger">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-signpost-fill"></span>
@@ -210,7 +211,7 @@
                             <p>Os. Stefana Batorego 57, Poznań 60-687</p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
+                    <div class="col-md-6 col-lg-3 d-flex u-fade-type-down js-scroll-trigger">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-telephone-fill"></span>
@@ -219,7 +220,7 @@
                             <p><a href="tel://48618249541">+ 48 61 824 9541</a></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
+                    <div class="col-md-6 col-lg-3 d-flex u-fade-type-down js-scroll-trigger">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-envelope-open-fill"></span>
@@ -228,7 +229,7 @@
                             <p><a href="mailto:biuro@wtapes.pl">biuro@wtapes.pl</a></p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 d-flex animated animatedFadeInUp fadeInUp">
+                    <div class="col-md-6 col-lg-3 d-flex u-fade-type-down js-scroll-trigger">
                         <div class="align-self-stretch box p-4 text-center">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="bi bi-globe"></span>
@@ -333,7 +334,44 @@
 @endsection
 
 @section('javascript')
-        const scrollHandler = () => {
+    $(function () {
+        $(document).ready(function(){
+            $(".js-window-trigger").each(function () {
+                $(this).addClass('is-active');
+            });
+        });
+    });
+
+
+    // jquery
+    // -------------------------------
+
+    $(function () {
+        if ($('.js-scroll-trigger').length) {
+            scrollAnimation();
+        }
+
+        function scrollAnimation() {
+            $(window).scroll(function () {
+                $(".js-scroll-trigger").each(function () {
+                    let position = $(this).offset().top,
+                    scroll = $(window).scrollTop(),
+                    windowHeight = $(window).height();
+
+                    if (scroll > position - windowHeight + 80) {
+                        $(this).addClass('is-active');
+                    }
+                });
+            });
+    }
+        $(window).trigger('scroll');
+    });
+
+
+
+
+
+    const scrollHandler = () => {
         let menu = document.querySelector('#navbar')
 
         let A = document.getElementById('slogan')
@@ -365,6 +403,7 @@
         }
         if(min === distance_B){
             document.querySelectorAll('.nav-link')[1].classList.add('active')
+
         }
         if(min === distance_C){
             document.querySelectorAll('.nav-link')[2].classList.add('active')
