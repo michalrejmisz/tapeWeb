@@ -2,6 +2,20 @@
 
 
 @section('content')
+    <!-- Modal Message Sent popup-->
+    <div class="modal fade" id="messageSent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color:#04ccfc;">
+                <div class="modal-body" style="color:white;">
+                    {{__("messages.contact.form.message.sent")}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
     <section class="d-flex min-vh-100 inline-block" id="slogan"  fetchpriority="high" style="background-color: #04ccfc; background-image: url('{{asset('images/bgshutter1920_2233.webp')}}');">
 
         <div class="content--centered animated animatedFadeInUp fadeInUp">
@@ -492,9 +506,15 @@
         success: function( response ) {
         $('#submit').prop('value', '{{__("messages.contact.form.send.message")}}');
         $("#submit"). attr("disabled", false);
-        $('#message').fadeIn('slow', function(){
-        $('#message').delay(3000).fadeOut();
+{{--        $('#message').fadeIn('slow', function(){--}}
+        // $('#message').delay(3000).fadeOut();
+        $(function () {
+        $('#messageSent').modal('show');
+        setTimeout(function () {
+        $('#messageSent').modal('hide');
+        }, 2500);
         });
+{{--        });--}}
         document.getElementById("ajax-contact-form").reset();
         }
         });

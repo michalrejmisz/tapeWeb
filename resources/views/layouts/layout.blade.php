@@ -54,8 +54,8 @@
     <div class="container">
         <div class="d-flex align-items-center justify-content-end" style="background-color:#f8fafc">
             {{__("messages.choose.language")}}
-            <button onclick="changeLanguage(this.value)" value="pl" style="border: none; background-color:#f8fafc"><img style="width:25px; height:20px;" src="{{asset('images/poland.png')}}" alt="Polski"></button>
-            <button onclick="changeLanguage(this.value)" value="en" style="border: none; background-color:#f8fafc"><img style="width:25px; height:20px;" src="{{asset('images/uk.png')}}" alt="English"></button>
+            <button onclick="changeLanguage(this.value)" value="pl"><img src="{{asset('images/poland.png')}}" alt="Polski"></button>
+            <button onclick="changeLanguage(this.value)" value="en"><img src="{{asset('images/uk.png')}}" alt="English"></button>
         </div>
     </div>
 </div>

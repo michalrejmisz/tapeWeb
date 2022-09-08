@@ -47,6 +47,17 @@ table, th, td {
     box-shadow: 0 -2rem 1rem rgb(0 0 0 / 15%) !important;
 }
 
+/*Lang*/
+#lang button{
+    border: none;
+    background-color:#f8fafc;
+    padding:3px;
+}
+
+#lang img{
+    width:25px;
+    height:20px;
+}
 
 /* Navbar */
 #navbar .nav .nav-link{
