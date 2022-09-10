@@ -152,6 +152,18 @@
                                 @endif
                             </div>
 
+
+                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                                <div class="col-md-6">
+                                    {!! RecaptchaV3::field('register') !!}
+                                    @if ($errors->has('g-recaptcha-response'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group mb-3 d-flex">
                                     <div class="pe-2">
                                         <input class="form-check-input" name="rodo" type="checkbox" value="" id="flexCheckDefault">
