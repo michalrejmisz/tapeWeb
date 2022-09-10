@@ -44,6 +44,7 @@
         }
     </style>
 
+    {!! RecaptchaV3::initJs() !!}
     <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
 
 

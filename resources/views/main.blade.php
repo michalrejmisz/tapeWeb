@@ -308,6 +308,19 @@
                                 </div>
                             </div>
 
+
+                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                                <div class="col-md-6">
+                                    {!! RecaptchaV3::field('register') !!}
+                                    @if ($errors->has('g-recaptcha-response'))
+                                        <span class="help-block">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+
                             <div class="form-group my-4 d-flex float-end">
                                 <input type="submit" value="{{__("messages.contact.form.send.message")}}" id="submit" class="btn btn-primary py-3 px-5">
                             </div>
@@ -500,23 +513,20 @@
         $('#submit').prop('value', '{{__("messages.contact.form.please.wait")}}');
         $("#submit").attr("disabled", true);
         $.ajax({
-        url: "{{route('contact.us.store')}}",
-        type: "POST",
-        data: $('#ajax-contact-form').serialize(),
-        success: function( response ) {
-        $('#submit').prop('value', '{{__("messages.contact.form.send.message")}}');
-        $("#submit"). attr("disabled", false);
-{{--        $('#message').fadeIn('slow', function(){--}}
-        // $('#message').delay(3000).fadeOut();
-        $(function () {
-        $('#messageSent').modal('show');
-        setTimeout(function () {
-        $('#messageSent').modal('hide');
-        }, 2500);
-        });
-{{--        });--}}
-        document.getElementById("ajax-contact-form").reset();
-        }
+            url: "{{route('contact.us.store')}}",
+            type: "POST",
+            data: $('#ajax-contact-form').serialize(),
+            success: function( response ) {
+                $('#submit').prop('value', '{{__("messages.contact.form.send.message")}}');
+                $("#submit"). attr("disabled", false);
+                $(function () {
+                    $('#messageSent').modal('show');
+                    setTimeout(function () {
+                    $('#messageSent').modal('hide');
+                    }, 2500);
+                });
+                document.getElementById("ajax-contact-form").reset();
+            }
         });
         }
         })

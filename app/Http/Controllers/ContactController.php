@@ -9,14 +9,22 @@ class ContactController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = \Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email',
             'phone' => 'nullable',
             'subject' => 'required',
-            'message' => 'required'
-        ]);
+            'message' => 'required',
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.5'
+        ], [
+                'g-recaptcha-response.required' => "Captcha Wymagana",
+            ]
+        );
 
+        if ($validator->fails())
+        {
+            return response()->json(['errors'=>$validator->errors()->all()]);
+        }
 
         Contact::create([
             'name' => $request->name,
