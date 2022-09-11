@@ -71,7 +71,7 @@
                             @endforeach
                         </div>
                 </div>
-            </div>>
+            </div>
 
             @foreach ($products as $product)
                 @if($product->hidden == 0)

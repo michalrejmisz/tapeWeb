@@ -519,7 +519,6 @@
             success: function( response ) {
                 $('#submit').prop('value', '{{__("messages.contact.form.send.message")}}');
                 $("#submit"). attr("disabled", false);
-                console.log($('#ajax-contact-form').serialize());
                 $(function () {
                     $('#messageSent').modal('show');
                     setTimeout(function () {
