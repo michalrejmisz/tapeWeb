@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>{{__("messages.contactus")}}</h4>
-                    <p> Os. Stefana Batorego 57 <br>
+                    <p> os. Stefana Batorego 57 <br>
                         Poznań, 60-687<br>
                         <br>
                         <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">

@@ -222,7 +222,7 @@
                                 <span class="bi bi-signpost-fill"></span>
                             </div>
                             <h3 class="mb-4">{{__("messages.contactform.address")}}</h3>
-                            <p>Os. Stefana Batorego 57, Poznań 60-687</p>
+                            <p>os. Stefana Batorego 57, Poznań 60-687</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex u-fade-type-down js-scroll-trigger">
@@ -231,7 +231,9 @@
                                 <span class="bi bi-telephone-fill"></span>
                             </div>
                             <h3 class="mb-4">{{__("messages.contactform.contactnumber")}}</h3>
-                            <p><a href="tel://48618249541">+ 48 61 824 9541</a></p>
+                            <p style="margin-bottom:0"><a href="tel://48618249541">+48 61 824 9541</a></p>
+                            <p style="margin-bottom:0"><a href="tel://+48531247722">+48 531 247 722</a></p>
+                            <p style="margin-bottom:0"><a href="tel://+48608098573">+48 608 098 573</a></p>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-3 d-flex u-fade-type-down js-scroll-trigger">
