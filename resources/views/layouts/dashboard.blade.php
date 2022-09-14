@@ -21,7 +21,7 @@
 <nav class="sb-topnav navbar navbar-expand navbar-dark row" style="background-color:#343a40">
     <!-- Navbar Brand-->
         <div class="col">
-            <a class="navbar-brand ps-3" href="#" style="color:white">wTape</a>
+            <a class="navbar-brand ps-3" href="#" style="color:white">W Tapes</a>
         </div>
 
         <div class="col">

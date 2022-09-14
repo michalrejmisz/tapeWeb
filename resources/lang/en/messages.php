@@ -3,8 +3,8 @@ return [
 //    Meta
     "meta.description" => "Check out the highest quality packing tapes and printed tapes at affordable prices. In our offer You are sure to find something for yourself.",
     "meta.title" => "packing tapes and printed tapes",
-    "meta.products.title" => " - Products available - wTapes largest selection of tapes for various applications.",
-    "meta.products.description.1" => " check out wTapes and order. Large selection ",
+    "meta.products.title" => " - Products available - W Tapes largest selection of tapes for various applications.",
+    "meta.products.description.1" => " check out W Tapes and order. Large selection ",
     "meta.products.description.2" => " and other tapes You will find on our website.",
 
 //    Language
@@ -21,7 +21,7 @@ return [
     "useful" => "Useful Links",
     "ourproducts" => "Our Products",
     "contactus" => "Contat us",
-    "aboutwtapes" => "about Wtapes",
+    "aboutwtapes" => "about W Tapes",
     "aboutwtapeslong" => "Since 2016, we are a company specializing in packaging tapes and printed tapes. In our offer everyone will find something for themselves, and if not - we will help you choose. We are not afraid of any challenges, we will always try to help so as to meet your expectations.",
     "allrights" => "All rights reserved",
 
