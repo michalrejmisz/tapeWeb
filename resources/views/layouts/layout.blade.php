@@ -140,7 +140,7 @@
     </div>
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>wTapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">Michał Rejmisz</a>
+            &copy; Copyright <strong><span>W Tapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">Michał Rejmisz</a>
         </div>
     </div>
 </footer>
