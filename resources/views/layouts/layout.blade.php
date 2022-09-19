@@ -2,9 +2,18 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <html>
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RP6TGVJWFH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RP6TGVJWFH');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name=”robots” content=”index, follow”>
+    <meta name=â€ťrobotsâ€ť content=â€ťindex, followâ€ť>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -13,14 +22,14 @@
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     {{-- scroll reveal   --}}
-{{--    <script src="https://unpkg.com/scrollreveal"></script>--}}
+    {{--    <script src="https://unpkg.com/scrollreveal"></script>--}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
     <script src="{{asset('js/scrollfade.js')}}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com" >
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" >
-{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">--}}
+    {{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">--}}
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" defer>
     <!-- Styles -->
@@ -46,7 +55,6 @@
 
     {!! RecaptchaV3::initJs() !!}
     <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
-
 
 </head>
 <body>
@@ -116,7 +124,7 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>{{__("messages.contactus")}}</h4>
                     <p> os. Stefana Batorego 57 <br>
-                        Poznań, 60-687<br>
+                        PoznaĹ„, 60-687<br>
                         <br>
                         <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
@@ -140,7 +148,7 @@
     </div>
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>W Tapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">Michał Rejmisz</a>
+            &copy; Copyright <strong><span>W Tapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">MichaĹ‚ Rejmisz</a>
         </div>
     </div>
 </footer>
