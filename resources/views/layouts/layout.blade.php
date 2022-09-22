@@ -11,6 +11,12 @@
         gtag('config', 'G-RP6TGVJWFH');
     </script>
 
+    @section('lang-header')
+        <link rel="alternate" hreflang="pl" href="https://wtapes.pl" />
+        <link rel="alternate" hreflang="en" href="https://wtapes.pl/en/" />
+        <link rel="alternate" hreflang="x-default" href="https://wtapes.pl" />
+    @show
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="index, follow">
@@ -63,8 +69,13 @@
     <div class="container">
         <div class="d-flex align-items-center justify-content-end" style="background-color:#f8fafc">
             {{__("messages.choose.language")}}
+{{--            <div class="d-flex justify-content-between align-items-center p-2 clickableBox">--}}
+{{--                <div> <img src="{{asset('images/poland.png')}}" alt="Polski"> </div>--}}
+{{--                <div> <a class="d-none" href="{{route('en')}}"></a></div>--}}
+{{--            </div>--}}
             <button onclick="changeLanguage(this.value)" value="pl"><img src="{{asset('images/poland.png')}}" alt="Polski"></button>
             <button onclick="changeLanguage(this.value)" value="en"><img src="{{asset('images/uk.png')}}" alt="English"></button>
+
         </div>
     </div>
 </div>
@@ -77,15 +88,15 @@
 
 
             <header class="d-flex flex-wrap justify-content-center py-3">
-                <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+                <a href="{{route('main') }}" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                     <img src="{{asset('images/logo-dark.png')}}" width="200" height="50" alt="logo"/>
                 </a>
                 <nav class="stroke">
                     <ul class="nav nav-pills fs-5">
-                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#slogan' : '/' }}" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">{{__("messages.home")}}</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#slogan' : route('main') }}" class="nav-link {{request()->routeIs('main') ? 'active' : '' }}" aria-current="page">{{__("messages.home")}}</a></li>
                         <li class="nav-item"><a href="{{route('products_by_category', 1)}}" class="nav-link {{request()->routeIs('products_by_category') ? 'active' : '' }}">{{__("messages.products")}}</a></li>
-                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}" class="nav-link">{{__("messages.about")}}</a></li>
-                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}" class="nav-link">{{__("messages.contact")}}</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-about-us' : route('main').'/#main-page-about-us' }}" class="nav-link">{{__("messages.about")}}</a></li>
+                        <li class="nav-item"><a href="{{request()->routeIs('main') ? '#main-page-contact-form' : route('main',).'/#main-page-contact-form' }}" class="nav-link">{{__("messages.contact")}}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -107,10 +118,10 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>{{__("messages.useful")}}</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#slogan' : '/' }}">{{__("messages.home")}}</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('products') ? '#' : '/products' }}">{{__("messages.products")}}</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-about-us' : '/#main-page-about-us' }}">{{__("messages.about")}}</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : '/#main-page-contact-form' }}">{{__("messages.contact")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href=""{{request()->routeIs('main') ? '#slogan' : route('main') }}">{{__("messages.home")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{route('products_by_category', 1)}}">{{__("messages.products")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-about-us' : route('main').'/#main-page-about-us' }}">{{__("messages.about")}}</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{{request()->routeIs('main') ? '#main-page-contact-form' : route('main',).'/#main-page-contact-form' }}">{{__("messages.contact")}}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">
@@ -124,7 +135,7 @@
                 <div class="col-lg-3 col-md-6 footer-contact">
                     <h4>{{__("messages.contactus")}}</h4>
                     <p> os. Stefana Batorego 57 <br>
-                        PoznaĹ„, 60-687<br>
+                        Poznań, 60-687<br>
                         <br>
                         <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                                 <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
@@ -148,7 +159,7 @@
     </div>
     <div class="container">
         <div class="copyright">
-            &copy; Copyright <strong><span>W Tapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">MichaĹ‚ Rejmisz</a>
+            &copy; Copyright <strong><span>W Tapes</span></strong>. {{__("messages.allrights")}} </div> <div class="credits"> Designed by <a href="#">Michał Rejmisz</a>
         </div>
     </div>
 </footer>

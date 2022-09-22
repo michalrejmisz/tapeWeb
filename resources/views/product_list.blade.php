@@ -1,5 +1,13 @@
 @extends('layouts.layout')
 
+@section('lang-header')
+
+        <link rel="alternate" hreflang="pl" href="https://wtapes.pl/products/{{request()->route('id')}}" />
+        <link rel="alternate" hreflang="en" href="https://wtapes.pl/en/products/{{request()->route('id')}}" />
+        <link rel="alternate" hreflang="x-default" href="https://wtapes.pl/products/{{request()->route('id')}}" />
+@endsection
+
+
 @if(App::getLocale() == 'pl')
 @section('meta-title')
 {{$category->name_pl}} {{__("messages.meta.products.title")}}

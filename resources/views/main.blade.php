@@ -333,7 +333,7 @@
 
                     <div class="col-md-4 d-none d-lg-flex align-items-center justify-content-center p-5">
                         <div class="contact1-pic js-tilt " data-tilt="" style="">
-                            <img src="images/contact.png" alt="img">
+                            <img src="{{asset('images/contact.png')}}" alt="img">
                         </div>
                     </div>
                 </div>
